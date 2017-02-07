@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC4556C0-3BF7-4095-BDAD-3FCB412BB819}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YSSGP</RootNamespace>
+    <AssemblyName>YSSGP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\tgurl\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>41F56C464B2761280E9FC64C15EE928CB7FEF465</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>csgb.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GanttChart">
+      <HintPath>..\..\..\..\..\Desktop\GanttChart.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.WinForms">
+      <HintPath>C:\Users\tayfun.gurlevik\Downloads\HtmlRenderer 1.5.0.6\WinForms\NET40\HtmlRenderer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.0.1\lib\net40\itext.barcodes.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.0.1\lib\net40\itext.forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.io, Version=7.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.0.1\lib\net40\itext.io.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.0.1\lib\net40\itext.kernel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.0.1\lib\net40\itext.layout.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.0.1\lib\net40\itext.pdfa.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.0.1\lib\net40\itext.sign.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AltGorevveSorumluluklarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltGorevveSorumluluklarForm.Designer.cs">
+      <DependentUpon>AltGorevveSorumluluklarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltIsverenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltIsverenForm.Designer.cs">
+      <DependentUpon>AltIsverenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AsilIsverenISGPersonelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsilIsverenISGPersonelForm.Designer.cs">
+      <DependentUpon>AsilIsverenISGPersonelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalisanTemsilcisiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalisanTemsilcisiForm.Designer.cs">
+      <DependentUpon>CalisanTemsilcisiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalismaYontemleriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalismaYontemleriForm.Designer.cs">
+      <DependentUpon>CalismaYontemleriForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleFull.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExampleFull.Designer.cs">
+      <DependentUpon>ExampleFull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hakkında.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hakkında.Designer.cs">
+      <DependentUpon>Hakkında.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsAkisPlaniForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsAkisPlaniForm.Designer.cs">
+      <DependentUpon>IsAkisPlaniForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsleAlakalıRisklerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsleAlakalıRisklerForm.Designer.cs">
+      <DependentUpon>IsleAlakalıRisklerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsverenBilgileriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsverenBilgileriForm.Designer.cs">
+      <DependentUpon>IsverenBilgileriForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IsverenGorevveSorumluluklarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsverenGorevveSorumluluklarForm.Designer.cs">
+      <DependentUpon>IsverenGorevveSorumluluklarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KendiNaminaGorevForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KendiNaminaGorevForm.Designer.cs">
+      <DependentUpon>KendiNaminaGorevForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KendiNaminaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KendiNaminaForm.Designer.cs">
+      <DependentUpon>KendiNaminaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjeBilgileriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjeBilgileriForm.Designer.cs">
+      <DependentUpon>ProjeBilgileriForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjeSorumlusuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjeSorumlusuForm.Designer.cs">
+      <DependentUpon>ProjeSorumlusuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SantiyeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SantiyeForm.Designer.cs">
+      <DependentUpon>SantiyeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sınıflar\AltIsverenBilgileri.cs" />
+    <Compile Include="Sınıflar\CakisanIsler.cs" />
+    <Compile Include="Sınıflar\CalisanTemsilcisi.cs" />
+    <Compile Include="Sınıflar\CalismaYontemi.cs" />
+    <Compile Include="Sınıflar\Is.cs" />
+    <Compile Include="Sınıflar\ISGPersonel.cs" />
+    <Compile Include="Sınıflar\ISGUzmani.cs" />
+    <Compile Include="Sınıflar\IsPlani.cs" />
+    <Compile Include="Sınıflar\IsverenBilgileri.cs" />
+    <Compile Include="Sınıflar\IsyeriHekimi.cs" />
+    <Compile Include="Sınıflar\KendiNaminaCalisan.cs" />
+    <Compile Include="Sınıflar\Personel.cs" />
+    <Compile Include="Sınıflar\Proje.cs" />
+    <Compile Include="Sınıflar\ProjeBilgileri.cs" />
+    <Compile Include="Sınıflar\ProjeDump.cs" />
+    <Compile Include="Sınıflar\ProjeSorumlusu.cs" />
+    <Compile Include="Sınıflar\RaporHelper.cs" />
+    <Compile Include="Sınıflar\SGKoordinator-Hazirlik.cs" />
+    <Compile Include="Sınıflar\SGKUygulama.cs" />
+    <Compile Include="Sınıflar\Tehlike.cs" />
+    <Compile Include="Sınıflar\UcuncuTarafEtki.cs" />
+    <Compile Include="Sınıflar\YonetiminTaahudu.cs" />
+    <Compile Include="Sınıflar\ŞantiyeKuralları.cs" />
+    <Compile Include="UcuncuTarafForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UcuncuTarafForm.Designer.cs">
+      <DependentUpon>UcuncuTarafForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YapiSahasininGenelineOzguForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YapiSahasininGenelineOzguForm.Designer.cs">
+      <DependentUpon>YapiSahasininGenelineOzguForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YardimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YardimForm.Designer.cs">
+      <DependentUpon>YardimForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YazdırForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YazdırForm.Designer.cs">
+      <DependentUpon>YazdırForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YonetiminTaahhuduForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YonetiminTaahhuduForm.Designer.cs">
+      <DependentUpon>YonetiminTaahhuduForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZamanMekanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZamanMekanForm.Designer.cs">
+      <DependentUpon>ZamanMekanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ziyaretciForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ziyaretciForm.Designer.cs">
+      <DependentUpon>ziyaretciForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AltGorevveSorumluluklarForm.resx">
+      <DependentUpon>AltGorevveSorumluluklarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltIsverenForm.resx">
+      <DependentUpon>AltIsverenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsilIsverenISGPersonelForm.resx">
+      <DependentUpon>AsilIsverenISGPersonelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalisanTemsilcisiForm.resx">
+      <DependentUpon>CalisanTemsilcisiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalismaYontemleriForm.resx">
+      <DependentUpon>CalismaYontemleriForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExampleFull.resx">
+      <DependentUpon>ExampleFull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hakkında.resx">
+      <DependentUpon>Hakkında.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsAkisPlaniForm.resx">
+      <DependentUpon>IsAkisPlaniForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsleAlakalıRisklerForm.resx">
+      <DependentUpon>IsleAlakalıRisklerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsverenBilgileriForm.resx">
+      <DependentUpon>IsverenBilgileriForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsverenGorevveSorumluluklarForm.resx">
+      <DependentUpon>IsverenGorevveSorumluluklarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KendiNaminaGorevForm.resx">
+      <DependentUpon>KendiNaminaGorevForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KendiNaminaForm.resx">
+      <DependentUpon>KendiNaminaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjeBilgileriForm.resx">
+      <DependentUpon>ProjeBilgileriForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjeSorumlusuForm.resx">
+      <DependentUpon>ProjeSorumlusuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SantiyeForm.resx">
+      <DependentUpon>SantiyeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcuncuTarafForm.resx">
+      <DependentUpon>UcuncuTarafForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YapiSahasininGenelineOzguForm.resx">
+      <DependentUpon>YapiSahasininGenelineOzguForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YardimForm.resx">
+      <DependentUpon>YardimForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YazdırForm.resx">
+      <DependentUpon>YazdırForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YonetiminTaahhuduForm.resx">
+      <DependentUpon>YonetiminTaahhuduForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZamanMekanForm.resx">
+      <DependentUpon>ZamanMekanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ziyaretciForm.resx">
+      <DependentUpon>ziyaretciForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="Raporlar\SGP-2 31 08 2015.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="csgb.ico" />
+    <Content Include="Raporlar\Template\altisverenler.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Raporlar\Template\empty.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Raporlar\Template\kendinam.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Raporlar\Template\isveren.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Raporlar\Template\ProjeBilgileri.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Raporlar\Template\Taah.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Projeler\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
