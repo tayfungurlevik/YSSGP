@@ -372,7 +372,7 @@ namespace YSSGP
         {
             if (saveFileDialog2.ShowDialog()==DialogResult.OK)
             {
-                RaporHelper.ProjeBilgileriYazdir(saveFileDialog2.FileName,Proje.projeBilgileri);
+                RaporHelper.ProjeBilgileriYazdir(saveFileDialog2.FileName,Proje.projeBilgileri,Proje.isveren,Proje.altisverenListesi,Proje.kendiNaminaCalisanlarListesi);
                 Process.Start(saveFileDialog2.FileName);
             }
         }

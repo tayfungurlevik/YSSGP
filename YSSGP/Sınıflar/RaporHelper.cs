@@ -48,7 +48,7 @@ namespace YSSGP.Sınıflar
             doc.Close();
         }
 
-        internal static void ProjeBilgileriYazdir(string dosya,ProjeBilgileri projbilgi)
+        internal static void ProjeBilgileriYazdir(string dosya,ProjeBilgileri projbilgi,IsverenBilgileri isveren,List<AltIsverenBilgileri> altisverenler, List<KendiNaminaCalisan> kendinamlist)
         {
             PdfWriter pdfyazici = new PdfWriter(dosya);
             PdfDocument pdf = new PdfDocument(pdfyazici);
@@ -58,7 +58,7 @@ namespace YSSGP.Sınıflar
             PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
 
 
-            doc.Add(new Paragraph("2. Yönetimin Taahhüdü").SetFont(font).SetFontSize(24));
+            doc.Add(new Paragraph("2. Proje Bilgileri").SetFont(font).SetFontSize(24));
             doc.Add(new Paragraph("2.1 Genel Bilgiler").SetFont(font).SetFontSize(12).SetBold());
             doc.Add(new Paragraph("2.1.1 Projeye Ait Bilgiler").SetFont(font).SetFontSize(12));
             Table tablo = new Table(2);
@@ -77,6 +77,80 @@ namespace YSSGP.Sınıflar
             tablo.AddCell(projbilgi.bitisTarih.ToShortDateString());
 
             doc.Add(tablo);
+
+            doc.Add(new Paragraph("2.1.2 İşveren/Ana Yükleniciye Ait Bilgiler").SetFont(font).SetFontSize(12));
+            Table isverentablo = new Table(2);
+            isverentablo.SetFont(font);
+            isverentablo.AddCell("İşveren:");
+            isverentablo.AddCell(isveren.isveren);
+            isverentablo.AddCell("İşveren/Ana Yüklenici Unvanı:");
+            isverentablo.AddCell(isveren.unvan);
+            isverentablo.AddCell("İşyeri SGK Sicil No.:");
+            isverentablo.AddCell(isveren.sgksicilno);
+            isverentablo.AddCell("Tebligat Adresi:");
+            isverentablo.AddCell(isveren.adres);
+            isverentablo.AddCell("Telefon / Faks:");
+            isverentablo.AddCell(isveren.telfaks);
+            isverentablo.AddCell("Web adresi:");
+            isverentablo.AddCell(isveren.web);
+            isverentablo.AddCell("Sorumlu Yapı Denetim Firması /Sorumlu Müşavir Firma/ Diğer Kontrol Birimleri:");
+            isverentablo.AddCell(isveren.sorumlufirmalar);
+
+            doc.Add(isverentablo);
+
+            doc.Add(new Paragraph("2.1.3 Alt İşveren/Alt Yükleniciye Ait Bilgiler").SetFont(font).SetFontSize(12));
+            for (int i = 0; i < altisverenler.Count; i++)
+            {
+                doc.Add(new Paragraph((i+1) + ". Alt İşveren").SetFont(font).SetFontSize(12));
+                Table altisverentablo = new Table(2);
+                altisverentablo.SetFont(font);
+
+                altisverentablo.AddCell("Alt İşveren:");
+                //Cell altishucre = new Cell(2, 2).Add(altisverenler[i].altisveren);
+                altisverentablo.AddCell(altisverenler[i].altisveren);
+                altisverentablo.AddCell("İşyeri SGK Sicil No.: ");
+                altisverentablo.AddCell(altisverenler[i].sgk);
+                altisverentablo.AddCell("Tebligat Adresi: ");
+                altisverentablo.AddCell(altisverenler[i].adres);
+                altisverentablo.AddCell("Sözleşme Konusu İşler: ");
+                altisverentablo.AddCell(altisverenler[i].isler);
+                altisverentablo.AddCell("Sözleşmenin Başlama ve Bitiş Tarihleri: ");
+                altisverentablo.AddCell("Başlama Tarihi: " + altisverenler[i].baslangictarih.ToShortDateString() + " - " + "Bitiş Tarihi:" + altisverenler[i].bitistarih.ToShortDateString());
+                doc.Add(altisverentablo);
+                doc.Add(new Paragraph("İş Güvenliği Uzmanı ve İşyeri Hekimi Bilgileri").SetFont(font).SetFontSize(12));
+                Table igutablo = new Table(3);
+                igutablo.SetFont(font);
+                igutablo.AddCell("");
+                igutablo.AddCell("Adı ve Soyadı");
+                igutablo.AddCell("Sertifika Sınıfı/No");
+                igutablo.AddCell("İş Güvenliği Uzmanı:");
+                igutablo.AddCell(altisverenler[i].isguzmanad);
+                igutablo.AddCell(altisverenler[i].isguzmansert);
+                igutablo.AddCell("İşyeri Hekimi:");
+                igutablo.AddCell(altisverenler[i].hekimad);
+                igutablo.AddCell(altisverenler[i].hekimsert);
+                doc.Add(igutablo);
+                
+            }
+
+            doc.Add(new Paragraph("2.1.4 Kendi Nam ve Hesabına Çalışanlara Ait Bilgiler").SetFont(font).SetFontSize(12));
+            for (int i = 0; i < kendinamlist.Count; i++)
+            {
+                doc.Add(new Paragraph((i + 1) + ". Kendi Nam ve Hesabına Çalışanlan").SetFont(font).SetFontSize(12));
+                Table kenditablo = new Table(2);
+                kenditablo.SetFont(font);
+                kenditablo.AddCell("Adı Soyadı:");
+                kenditablo.AddCell(kendinamlist[i].adsoyad);
+                kenditablo.AddCell("Tebligat Adresi:");
+                kenditablo.AddCell(kendinamlist[i].adres);
+                kenditablo.AddCell("Sözleşme Konusu İşler:");
+                kenditablo.AddCell(kendinamlist[i].isler);
+                kenditablo.AddCell("Sözleşmenin Başlama ve Bitiş Tarihleri");
+                kenditablo.AddCell("Başlama Tarihi: " + kendinamlist[i].baslangictarih.ToShortDateString() + " - " + "Bitiş Tarihi:" + kendinamlist[i].bitistarih.ToShortDateString());
+                doc.Add(kenditablo);
+            }
+
+
             doc.Close();
         }
     }
