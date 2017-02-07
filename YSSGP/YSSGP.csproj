@@ -79,10 +79,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GanttChart">
-      <HintPath>..\..\..\..\..\Desktop\GanttChart.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlRenderer.WinForms">
-      <HintPath>C:\Users\tayfun.gurlevik\Downloads\HtmlRenderer 1.5.0.6\WinForms\NET40\HtmlRenderer.WinForms.dll</HintPath>
+      <HintPath>D:\GanttChart.dll</HintPath>
     </Reference>
     <Reference Include="itext.barcodes, Version=7.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\itext7.7.0.1\lib\net40\itext.barcodes.dll</HintPath>

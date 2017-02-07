@@ -47,5 +47,37 @@ namespace YSSGP.Sınıflar
             doc.Add(new Paragraph(taah.adSoyad).SetMarginTop(40).SetMarginRight(40).SetFont(font).SetFontSize(12).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT));
             doc.Close();
         }
+
+        internal static void ProjeBilgileriYazdir(string dosya,ProjeBilgileri projbilgi)
+        {
+            PdfWriter pdfyazici = new PdfWriter(dosya);
+            PdfDocument pdf = new PdfDocument(pdfyazici);
+            Document doc = new Document(pdf, PageSize.A4);
+            doc.SetMargins(20, 20, 20, 20);
+            
+            PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
+
+
+            doc.Add(new Paragraph("2. Yönetimin Taahhüdü").SetFont(font).SetFontSize(24));
+            doc.Add(new Paragraph("2.1 Genel Bilgiler").SetFont(font).SetFontSize(12).SetBold());
+            doc.Add(new Paragraph("2.1.1 Projeye Ait Bilgiler").SetFont(font).SetFontSize(12));
+            Table tablo = new Table(2);
+            tablo.SetFont(font);
+            tablo.AddCell("Proje Adı:");
+            tablo.AddCell(projbilgi.projeAdi);
+            tablo.AddCell("İşin Sahibi / İhale Makamı:");
+            tablo.AddCell(projbilgi.isinSahibi);
+            tablo.AddCell("Yapı Sahasının Açık Adresi:");
+            tablo.AddCell(projbilgi.adres);
+            tablo.AddCell("Projenin Tanımı ve Kapsamı:");
+            tablo.AddCell(projbilgi.tanim);
+            tablo.AddCell("Projenin Başlangıç Tarihi:");
+            tablo.AddCell(projbilgi.baslangicTarih.ToShortDateString());
+            tablo.AddCell("Projenin Planlanan Bitiş Tarihi:");
+            tablo.AddCell(projbilgi.bitisTarih.ToShortDateString());
+
+            doc.Add(tablo);
+            doc.Close();
+        }
     }
 }

@@ -370,7 +370,11 @@ namespace YSSGP
 
         private void projeBilgileriToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            if (saveFileDialog2.ShowDialog()==DialogResult.OK)
+            {
+                RaporHelper.ProjeBilgileriYazdir(saveFileDialog2.FileName,Proje.projeBilgileri);
+                Process.Start(saveFileDialog2.FileName);
+            }
         }
 
         private void projeyeAitBilgilerToolStripMenuItem1_Click(object sender, EventArgs e)

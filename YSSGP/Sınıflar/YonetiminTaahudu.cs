@@ -61,6 +61,8 @@ namespace YSSGP.Sınıflar
         }
         public YonetiminTaahudu()
         {
+            adSoyad = "";
+            firma = "";
             taahudler = new List<string>();
             taahudler.Add("Yapılacak her işte sağlık ve güvenliğin öncelikli olarak göz önünde bulundurulacağı,");
             taahudler.Add("Yürürlükteki iş sağlığı ve güvenliği mevzuatına tam olarak uyulacağını,");

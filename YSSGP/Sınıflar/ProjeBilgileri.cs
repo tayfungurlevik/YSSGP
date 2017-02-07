@@ -14,11 +14,16 @@ namespace YSSGP.Sınıflar
         {
             baslangicTarih = DateTime.Now;
             bitisTarih = DateTime.Now;
+            projeAdi = "";
+            isinSahibi = "";
+            adres = "";
+            tanim = "";
         }
         public override string ToString()
         {
             string sonuc = "";
             sonuc += projeAdi + System.Environment.NewLine;
+            sonuc += isinSahibi + System.Environment.NewLine;
             sonuc += adres + System.Environment.NewLine;
             sonuc += tanim + System.Environment.NewLine;
             sonuc += baslangicTarih.ToShortDateString() + System.Environment.NewLine;

@@ -163,6 +163,7 @@ namespace YSSGP.Sınıflar
                             ProjeBilgileri projebilgi = new ProjeBilgileri();
 
                             projebilgi.projeAdi = okuyucu.ReadLine();
+                            projebilgi.isinSahibi = okuyucu.ReadLine();
                             projebilgi.adres = okuyucu.ReadLine();
                             projebilgi.tanim = okuyucu.ReadLine();
                             projebilgi.baslangicTarih = Convert.ToDateTime(okuyucu.ReadLine());
