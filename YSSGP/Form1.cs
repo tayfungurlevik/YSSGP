@@ -600,5 +600,20 @@ namespace YSSGP
             f.Show();
             
         }
+
+        private void sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog2.ShowDialog()==DialogResult.OK)
+            {
+                RaporHelper.Bolum3Yazdir(saveFileDialog2.FileName,Proje.isveren,Proje.altisverenListesi,Proje.kendiNaminaCalisanlarListesi,Proje.projeSorumlusu,Proje.SGKoordianator_sorumlu_hazirlik,Proje.SGKoordianator_sorumlu_uygulama,Proje.asilisverenisguzmanlari,Proje.asilisverenisyerihekimleri,Proje.calisantemsilciler);
+                Process.Start(saveFileDialog2.FileName);
+            }
+        }
+
+        private void işOrganizasyonuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Organizasyon oform = new Organizasyon();
+            //oform.Show();
+        }
     }
 }

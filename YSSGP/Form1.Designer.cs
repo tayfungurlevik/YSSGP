@@ -114,6 +114,7 @@ namespace YSSGP
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblAçıklama = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
+            this.işOrganizasyonuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -269,6 +270,7 @@ namespace YSSGP
             this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem.Name = "sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem";
             this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
             this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem.Text = "Sağlık ve Güvenlik Organizasyonu";
+            this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem.Click += new System.EventHandler(this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem_Click);
             // 
             // işvereninGörevVeSorumluluklarıToolStripMenuItem1
             // 
@@ -567,7 +569,8 @@ namespace YSSGP
             // 
             this.işlerinYönetimiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.işAkışPlanıToolStripMenuItem,
-            this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem});
+            this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem,
+            this.işOrganizasyonuToolStripMenuItem});
             this.işlerinYönetimiToolStripMenuItem.Name = "işlerinYönetimiToolStripMenuItem";
             this.işlerinYönetimiToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.işlerinYönetimiToolStripMenuItem.Text = "İşlerin &Yönetimi";
@@ -768,6 +771,13 @@ namespace YSSGP
             // 
             this.saveFileDialog2.Filter = "Pdf Dosyaları|*.pdf";
             // 
+            // işOrganizasyonuToolStripMenuItem
+            // 
+            this.işOrganizasyonuToolStripMenuItem.Name = "işOrganizasyonuToolStripMenuItem";
+            this.işOrganizasyonuToolStripMenuItem.Size = new System.Drawing.Size(462, 22);
+            this.işOrganizasyonuToolStripMenuItem.Text = "İş Organizasyonu";
+            this.işOrganizasyonuToolStripMenuItem.Click += new System.EventHandler(this.işOrganizasyonuToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -879,6 +889,7 @@ namespace YSSGP
         private ToolStripMenuItem düşeySığdırToolStripMenuItem;
         private ToolStripMenuItem pencereleriSıralaToolStripMenuItem;
         private SaveFileDialog saveFileDialog2;
+        private ToolStripMenuItem işOrganizasyonuToolStripMenuItem;
     }
 }
 

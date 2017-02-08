@@ -29,7 +29,7 @@ namespace YSSGP.Sınıflar
             PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254",true);
 
 
-            doc.Add(new Paragraph("1. Yönetimin Taahhüdü").SetFont(font).SetFontSize(24));
+            doc.Add(new Paragraph("1. YÖNETİMİN TAAHHÜDÜ").SetFont(font).SetFontSize(24));
             doc.Add(new Paragraph(taah.firma+ " yöneticisi olarak " + taah.proje + " projesinin hazırlık ve uygulama aşamalarını kapsayacak şekilde projenin tamamlanmasına kadar geçen sürede çalışanların sağlık ve güvenliklerini korumak amacıyla;").SetFont(font).SetFontSize(12));
             List taahhüdlerlist = new List(iText.Layout.Properties.ListNumberingType.DECIMAL).SetFont(font);
             
@@ -58,7 +58,7 @@ namespace YSSGP.Sınıflar
             PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
 
 
-            doc.Add(new Paragraph("2. Proje Bilgileri").SetFont(font).SetFontSize(24));
+            doc.Add(new Paragraph("2. PROJE BİLGİLERİ").SetFont(font).SetFontSize(24));
             doc.Add(new Paragraph("2.1 Genel Bilgiler").SetFont(font).SetFontSize(12).SetBold());
             doc.Add(new Paragraph("2.1.1 Projeye Ait Bilgiler").SetFont(font).SetFontSize(12));
             Table tablo = new Table(2);
@@ -136,7 +136,7 @@ namespace YSSGP.Sınıflar
             doc.Add(new Paragraph("2.1.4 Kendi Nam ve Hesabına Çalışanlara Ait Bilgiler").SetFont(font).SetFontSize(12));
             for (int i = 0; i < kendinamlist.Count; i++)
             {
-                doc.Add(new Paragraph((i + 1) + ". Kendi Nam ve Hesabına Çalışanlan").SetFont(font).SetFontSize(12));
+                doc.Add(new Paragraph((i + 1) + ". Kendi Nam ve Hesabına Çalışan").SetFont(font).SetFontSize(12));
                 Table kenditablo = new Table(2);
                 kenditablo.SetFont(font);
                 kenditablo.AddCell("Adı Soyadı:");
@@ -152,6 +152,218 @@ namespace YSSGP.Sınıflar
 
 
             doc.Close();
+        }
+
+        internal static void Bolum3Yazdir(string fileName,IsverenBilgileri isveren,List<AltIsverenBilgileri> altisverenler,List<KendiNaminaCalisan> kendinamlist,ProjeSorumlusu sorumlu,SGKoordinator_Hazirlik hazirlik,SGKUygulama uygulama,List<ISGUzmani> asilisvuzmanlar,List<IsyeriHekimi> asilisvhekimler,List<CalisanTemsilcisi> calisantemsilciler)
+        { 
+            PdfWriter pdfyazici = new PdfWriter(fileName);
+            PdfDocument pdf = new PdfDocument(pdfyazici);
+            Document doc = new Document(pdf, PageSize.A4);
+            doc.SetMargins(20, 20, 20, 20);
+            doc.SetTextAlignment(iText.Layout.Properties.TextAlignment.JUSTIFIED);
+            PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
+
+
+            doc.Add(new Paragraph("3. SAĞLIK VE GÜVENLİK ORGANİZASYONU").SetFont(font).SetFontSize(24));
+
+            doc.Add(new Paragraph("3.1 Görev ve Sorumluluklar").SetFont(font).SetFontSize(12).SetBold());
+
+            doc.Add(new Paragraph("Bu bölümde çalışan, işveren, alt işveren, kendi nam ve hesabına çalışanlar ile ilgili görev ve sorumluluklara yer verilecektir. Ayrıca bu bölümde; iş güvenliği uzmanı, işyeri hekimi, proje sorumlusu, sağlık ve güvenlik koordinatörleri ve çalışan temsilcisine ait bilgiler ile görev ve sorumlulukları belirtilecektir.").SetFont(font).SetFontSize(12));
+            doc.Add(new Paragraph("Aşağıda belirtilen görev ve sorumluluklar mevzuat çerçevesinde belirlenmiş genel asgari hükümlerdir. Bu görev ve sorumluluklar haricinde, iş ve işyeri koşulları göz önünde bulundurularak detaylandırmalar yapılabilir.").SetFontSize(12).SetFont(font));
+
+            doc.Add(new Paragraph("İşverenin Görev ve Sorumlulukları").SetFontSize(12).SetFont(font).SetBold());
+
+            List isverengorevvesorumluluklar = new List();
+
+            isverengorevvesorumluluklar.SetFont(font);
+            isverengorevvesorumluluklar.SetFontSize(12);
+
+            for (int i = 0; i < isveren.gorevveSorumluluklar.Count; i++)
+            {
+                ListItem item = new ListItem(isveren.gorevveSorumluluklar[i]);
+                isverengorevvesorumluluklar.Add(item);
+            }
+            doc.Add(isverengorevvesorumluluklar);
+
+            doc.Add(new Paragraph("Alt İşverenlerin Görev ve Sorumlulukları").SetFont(font).SetFontSize(12).SetBold());
+
+            for (int i = 0; i < altisverenler.Count; i++)
+            {
+                doc.Add(new Paragraph(altisverenler[i].altisveren+ " Görev ve Sorumlulukları").SetFont(font).SetFontSize(12));
+                List altisverengorevlist = new List();
+                altisverengorevlist.SetFont(font);
+                altisverengorevlist.SetFontSize(12);
+                for (int j = 0; j < altisverenler[i].gorevvesorumluluklar.Count; j++)
+                {
+                    ListItem altli_item = new ListItem(altisverenler[i].gorevvesorumluluklar[j]);
+                    altisverengorevlist.Add(altli_item);
+                }
+                doc.Add(altisverengorevlist);
+            }
+            doc.Add(new Paragraph("Kendi Nam ve Hesabına Çalışanların Görev ve Sorumlulukları").SetFont(font).SetFontSize(12).SetBold());
+
+            for (int i = 0; i < kendinamlist.Count; i++)
+            {
+                doc.Add(new Paragraph(kendinamlist[i].adsoyad + " Görev ve Sorumlulukları").SetFont(font).SetFontSize(12));
+                List kendinamlistesi = new List();
+                kendinamlistesi.SetFont(font);
+                kendinamlistesi.SetFontSize(12);
+                for (int j = 0; j < kendinamlist[i].gorevvesorumluluklar.Count; j++)
+                {
+                    ListItem altli_item = new ListItem(kendinamlist[i].gorevvesorumluluklar[j]);
+                    kendinamlistesi.Add(altli_item);
+                }
+                doc.Add(kendinamlistesi);
+            }
+
+            doc.Add(new Paragraph("Proje Sorumlusu").SetFont(font).SetFontSize(12).SetBold());
+            Table ProjeSorumlusuTable = new Table(2);
+            ProjeSorumlusuTable.SetFont(font);
+            ProjeSorumlusuTable.SetFontSize(12);
+            ProjeSorumlusuTable.AddCell("Adı Soyadı:");
+            ProjeSorumlusuTable.AddCell(sorumlu.adsoyad);
+            ProjeSorumlusuTable.AddCell("Mesleği:");
+            ProjeSorumlusuTable.AddCell(sorumlu.Meslek);
+            ProjeSorumlusuTable.AddCell("İletişim Bilgileri:");
+            ProjeSorumlusuTable.AddCell(sorumlu.iletisim);
+
+            doc.Add(ProjeSorumlusuTable);
+            doc.Add(new Paragraph("Proje Sorumlusu Görev ve Sorumlulukları").SetFontSize(12).SetFont(font));
+            List projesorumlugorevlist = new List();
+            projesorumlugorevlist.SetFont(font);
+            projesorumlugorevlist.SetFontSize(12);
+            for (int i = 0; i < sorumlu.gorevvesorumluluklar.Count; i++)
+            {
+                ListItem projlistitem = new ListItem(sorumlu.gorevvesorumluluklar[i]);
+                projesorumlugorevlist.Add(projlistitem);
+            }
+            doc.Add(projesorumlugorevlist);
+            doc.Add(new Paragraph("Sağlık ve Güvenlik Koordinatörü (Hazırlık Aşaması)").SetFont(font).SetFontSize(12).SetBold());
+            Table SaglikHazirTable = new Table(2);
+            SaglikHazirTable.SetFont(font);
+            SaglikHazirTable.SetFontSize(12);
+            SaglikHazirTable.AddCell("Adı Soyadı:");
+            SaglikHazirTable.AddCell(hazirlik.adsoyad);
+            SaglikHazirTable.AddCell("Mesleği:");
+            SaglikHazirTable.AddCell(hazirlik.Meslek);
+            SaglikHazirTable.AddCell("İletişim Bilgileri:");
+            SaglikHazirTable.AddCell(hazirlik.iletisim);
+
+            doc.Add(SaglikHazirTable);
+            doc.Add(new Paragraph("Sağlık ve Güvenlik Koordinatörü (Hazırlık Aşaması) Görev ve Sorumlulukları").SetFontSize(12).SetFont(font));
+            List sghazgorevlist = new List();
+            sghazgorevlist.SetFont(font);
+            sghazgorevlist.SetFontSize(12);
+            for (int i = 0; i < hazirlik.gorevvesorumluluklar.Count; i++)
+            {
+                ListItem projlistitem = new ListItem(hazirlik.gorevvesorumluluklar[i]);
+                sghazgorevlist.Add(projlistitem);
+            }
+            doc.Add(sghazgorevlist);
+
+            doc.Add(new Paragraph("Sağlık ve Güvenlik Koordinatörü (Uygulama Aşaması)").SetFont(font).SetFontSize(12).SetBold());
+            Table SaglikUygulamaTable = new Table(2);
+            SaglikUygulamaTable.SetFont(font);
+            SaglikUygulamaTable.SetFontSize(12);
+            SaglikUygulamaTable.AddCell("Adı Soyadı:");
+            SaglikUygulamaTable.AddCell(uygulama.adsoyad);
+            SaglikUygulamaTable.AddCell("Mesleği:");
+            SaglikUygulamaTable.AddCell(uygulama.Meslek);
+            SaglikUygulamaTable.AddCell("İletişim Bilgileri:");
+            SaglikUygulamaTable.AddCell(uygulama.iletisim);
+
+            doc.Add(SaglikUygulamaTable);
+            doc.Add(new Paragraph("Sağlık ve Güvenlik Koordinatörü (Uygulama Aşaması) Görev ve Sorumlulukları").SetFontSize(12).SetFont(font));
+            List sguyggorevlist = new List();
+            sguyggorevlist.SetFont(font);
+            sguyggorevlist.SetFontSize(12);
+            for (int i = 0; i < uygulama.gorevvesorumluluklar.Count; i++)
+            {
+                ListItem projlistitem = new ListItem(uygulama.gorevvesorumluluklar[i]);
+                sguyggorevlist.Add(projlistitem);
+            }
+            doc.Add(sguyggorevlist);
+
+            doc.Add(new Paragraph("Asıl İşveren/Ana Yüklenici İş Güvenliği Uzman(lar)ı").SetFont(font).SetFontSize(12).SetBold());
+            for (int i = 0; i < asilisvuzmanlar.Count; i++)
+            {
+                Table tablo = new Table(2);
+                tablo.SetFont(font);
+                tablo.SetFontSize(12);
+                tablo.AddCell("Adı Soyadı:");
+                tablo.AddCell(asilisvuzmanlar[i].ad);
+                tablo.AddCell("Sertifika No.:");
+                tablo.AddCell(asilisvuzmanlar[i].sert);
+                tablo.AddCell("İletişim Bilgileri:");
+                tablo.AddCell(asilisvuzmanlar[i].iletişim);
+                doc.Add(tablo);
+                doc.Add(new Paragraph(asilisvuzmanlar[i].ad+ " Görev ve Sorumlulukları")).SetFontSize(12).SetFont(font);
+                List uzmangorevlist = new List();
+                uzmangorevlist.SetFontSize(12);
+                uzmangorevlist.SetFont(font);
+                for (int j = 0; j < asilisvuzmanlar[i].gorevvesorumluluklar.Count; j++)
+                {
+                    ListItem item = new ListItem(asilisvuzmanlar[i].gorevvesorumluluklar[j]);
+                    uzmangorevlist.Add(item);
+                }
+                doc.Add(uzmangorevlist);
+
+            }
+            doc.Add(new Paragraph("Asıl İşveren/Ana Yüklenici İşyeri Hekim(ler)i").SetFont(font).SetFontSize(12).SetBold());
+            for (int i = 0; i < asilisvhekimler.Count; i++)
+            {
+                Table tablo = new Table(2);
+                tablo.SetFont(font);
+                tablo.SetFontSize(12);
+                tablo.AddCell("Adı Soyadı:");
+                tablo.AddCell(asilisvhekimler[i].ad);
+                tablo.AddCell("Sertifika No.:");
+                tablo.AddCell(asilisvhekimler[i].sert);
+                tablo.AddCell("İletişim Bilgileri:");
+                tablo.AddCell(asilisvhekimler[i].iletişim);
+                doc.Add(tablo);
+                doc.Add(new Paragraph(asilisvhekimler[i].ad + " Görev ve Sorumlulukları")).SetFontSize(12).SetFont(font);
+                List uzmangorevlist = new List();
+                uzmangorevlist.SetFontSize(12);
+                uzmangorevlist.SetFont(font);
+                for (int j = 0; j < asilisvhekimler[i].gorevvesorumluluklar.Count; j++)
+                {
+                    ListItem item = new ListItem(asilisvhekimler[i].gorevvesorumluluklar[j]);
+                    uzmangorevlist.Add(item);
+                }
+                doc.Add(uzmangorevlist);
+
+            }
+            
+            doc.Add(new Paragraph("Çalışan Temsilcileri").SetFont(font).SetFontSize(12).SetBold());
+            for (int i = 0; i < calisantemsilciler.Count; i++)
+            {
+                Table tablo = new Table(2);
+                tablo.SetFont(font);
+                tablo.SetFontSize(12);
+                tablo.AddCell("Adı Soyadı:");
+                tablo.AddCell(calisantemsilciler[i].ad);
+                tablo.AddCell("Görevi:");
+                tablo.AddCell(calisantemsilciler[i].gorevi);
+                tablo.AddCell("İletişim Bilgileri:");
+                tablo.AddCell(calisantemsilciler[i].iletişim);
+                doc.Add(tablo);
+                doc.Add(new Paragraph(calisantemsilciler[i].ad + " Görev ve Sorumlulukları")).SetFontSize(12).SetFont(font);
+                List uzmangorevlist = new List();
+                uzmangorevlist.SetFontSize(12);
+                uzmangorevlist.SetFont(font);
+                for (int j = 0; j < calisantemsilciler[i].gorevvesorumluluklar.Count; j++)
+                {
+                    ListItem item = new ListItem(calisantemsilciler[i].gorevvesorumluluklar[j]);
+                    uzmangorevlist.Add(item);
+                }
+                doc.Add(uzmangorevlist);
+
+            }
+
+            doc.Close();
+
+
         }
     }
 }

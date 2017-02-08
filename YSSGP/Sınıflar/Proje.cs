@@ -21,7 +21,7 @@ namespace YSSGP.Sınıflar
         public static IsPlani plan;
         public static List<Tehlike> yapisahasiningenelozgutehlikeler;
         public static List<Tehlike> biyolojiktehlikeler;
-        
+        public static string isgorganizasyonsemasi;
 
         public static List<CakisanIsler> cakisanisler;
         public static List<UcuncuTarafEtki> ucuncutaraflar;
@@ -137,6 +137,10 @@ namespace YSSGP.Sınıflar
                     yazici.WriteLine("Begin Kurallar");
                     yazici.WriteLine(Proje.kurallar.ToString());
                     yazici.WriteLine("End Kurallar");
+                    yazici.WriteLine("Begin semadosya");
+                    yazici.WriteLine(isgorganizasyonsemasi);
+                    yazici.WriteLine("End semadosya");
+                    
                 }
             }
             catch (Exception ex)
@@ -858,7 +862,7 @@ namespace YSSGP.Sınıflar
                                 etki.kontrol = okuyucu.ReadLine();
                                 uctaraflar.Add(etki);
                             }
-                            Proje.ucuncutaraflar = uctaraflar;
+                            ucuncutaraflar = uctaraflar;
                         }
                         line = okuyucu.ReadLine();
                         if (line == "Begin Kurallar")
@@ -889,7 +893,13 @@ namespace YSSGP.Sınıflar
                                 }
 
                             }
-                            Proje.kurallar = şk;
+                            kurallar = şk;
+
+                        }
+                        line = okuyucu.ReadLine();
+                        if (line=="Begin semadosya")
+                        {
+                            isgorganizasyonsemasi = okuyucu.ReadLine();
                         }
                     }
                 }
