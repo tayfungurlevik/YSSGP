@@ -10,6 +10,7 @@ using iText.Kernel.Geom;
 using iText.Kernel.Font;
 using iText.IO.Font;
 using iText.Layout.Element;
+using iText.IO.Image;
 
 namespace YSSGP.Sınıflar
 {
@@ -360,10 +361,50 @@ namespace YSSGP.Sınıflar
                 doc.Add(uzmangorevlist);
 
             }
-
+            doc.Add(new AreaBreak(iText.Layout.Properties.AreaBreakType.NEXT_PAGE));
+            doc.Add(new Paragraph("3.2 İSG Organizasyon Şeması").SetFont(font).SetFontSize(12).SetBold());
+            Image isgsema = new Image(ImageDataFactory.Create(Proje.isgorganizasyonsemasi));
+            doc.Add(isgsema);
             doc.Close();
 
 
+        }
+
+        internal static void Bolum4Yazdir(string fileName)
+        {
+            PdfWriter pdfyazici = new PdfWriter(fileName);
+            PdfDocument pdf = new PdfDocument(pdfyazici);
+            Document doc = new Document(pdf, PageSize.A4);
+            doc.SetMargins(20, 20, 20, 20);
+            doc.SetTextAlignment(iText.Layout.Properties.TextAlignment.JUSTIFIED);
+            PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
+
+
+            doc.Add(new Paragraph("4. İŞLERİN YÖNETİMİ").SetFont(font).SetFontSize(24));
+
+            doc.Add(new Paragraph("4.1 İş Akış Planı ").SetFont(font).SetFontSize(12).SetBold());
+
+            Table işakışplanıtablosu = new Table(4);
+            işakışplanıtablosu.SetFont(font);
+            işakışplanıtablosu.SetFontSize(12);
+            işakışplanıtablosu.AddCell("Yapılacak İş");
+            işakışplanıtablosu.AddCell("Süresi");
+            işakışplanıtablosu.AddCell("Başlangıç Tarihi");
+            işakışplanıtablosu.AddCell("Bitiş Tarihi");
+            for (int i = 0; i < Proje.plan.yapilacakisler.Count; i++)
+            {
+                işakışplanıtablosu.AddCell(Proje.plan.yapilacakisler[i].isinadi);
+                işakışplanıtablosu.AddCell((Proje.plan.yapilacakisler[i].bitis- Proje.plan.yapilacakisler[i].baslangic).Days+" Gün" );
+                işakışplanıtablosu.AddCell(Proje.plan.yapilacakisler[i].baslangic.ToShortDateString());
+                işakışplanıtablosu.AddCell(Proje.plan.yapilacakisler[i].bitis.ToShortDateString());
+
+            }
+            doc.Add(işakışplanıtablosu);
+
+            doc.Add(new Paragraph("4.2 Çalışma Yöntemleri, Ekipman ve Eğitimli Personel İhtiyacının Belirlenmesi ").SetFont(font).SetFontSize(12).SetBold());
+
+
+            doc.Close();
         }
     }
 }

@@ -614,6 +614,20 @@ namespace YSSGP
         {
             //Organizasyon oform = new Organizasyon();
             //oform.Show();
+            if (openFileDialog2.ShowDialog()==DialogResult.OK)
+            {
+                Proje.isgorganizasyonsemasi = openFileDialog2.FileName;
+            }
+        }
+
+        private void işlerinYönetimiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog2.ShowDialog()==DialogResult.OK)
+            {
+                RaporHelper.Bolum4Yazdir(saveFileDialog2.FileName);
+
+                Process.Start(saveFileDialog2.FileName);
+            }
         }
     }
 }

@@ -88,6 +88,7 @@ namespace YSSGP
             this.işlerinYönetimiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.işAkışPlanıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.işOrganizasyonuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,7 +115,7 @@ namespace YSSGP
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblAçıklama = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
-            this.işOrganizasyonuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -344,6 +345,7 @@ namespace YSSGP
             this.işlerinYönetimiToolStripMenuItem1.Name = "işlerinYönetimiToolStripMenuItem1";
             this.işlerinYönetimiToolStripMenuItem1.Size = new System.Drawing.Size(311, 22);
             this.işlerinYönetimiToolStripMenuItem1.Text = "İşlerin Yönetimi";
+            this.işlerinYönetimiToolStripMenuItem1.Click += new System.EventHandler(this.işlerinYönetimiToolStripMenuItem1_Click);
             // 
             // işAkışPlanıToolStripMenuItem1
             // 
@@ -590,6 +592,13 @@ namespace YSSGP
             this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem.Text = "Ç&alışma Yöntemleri, Ekipman ve Eğitimli Personel İhtiyacının Belirlenmesi ";
             this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem.Click += new System.EventHandler(this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem_Click);
             // 
+            // işOrganizasyonuToolStripMenuItem
+            // 
+            this.işOrganizasyonuToolStripMenuItem.Name = "işOrganizasyonuToolStripMenuItem";
+            this.işOrganizasyonuToolStripMenuItem.Size = new System.Drawing.Size(462, 22);
+            this.işOrganizasyonuToolStripMenuItem.Text = "İş Organizasyonu";
+            this.işOrganizasyonuToolStripMenuItem.Click += new System.EventHandler(this.işOrganizasyonuToolStripMenuItem_Click);
+            // 
             // risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem
             // 
             this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -771,12 +780,11 @@ namespace YSSGP
             // 
             this.saveFileDialog2.Filter = "Pdf Dosyaları|*.pdf";
             // 
-            // işOrganizasyonuToolStripMenuItem
+            // openFileDialog2
             // 
-            this.işOrganizasyonuToolStripMenuItem.Name = "işOrganizasyonuToolStripMenuItem";
-            this.işOrganizasyonuToolStripMenuItem.Size = new System.Drawing.Size(462, 22);
-            this.işOrganizasyonuToolStripMenuItem.Text = "İş Organizasyonu";
-            this.işOrganizasyonuToolStripMenuItem.Click += new System.EventHandler(this.işOrganizasyonuToolStripMenuItem_Click);
+            this.openFileDialog2.FileName = "openFileDialog2";
+            this.openFileDialog2.Filter = "JPEG Dosyası (*.jpeg)|*.jpeg|PNG Dosyası (*.png)|*.png";
+            this.openFileDialog2.Title = "İSG Organizasyon Şeması Seç";
             // 
             // Form1
             // 
@@ -890,6 +898,7 @@ namespace YSSGP
         private ToolStripMenuItem pencereleriSıralaToolStripMenuItem;
         private SaveFileDialog saveFileDialog2;
         private ToolStripMenuItem işOrganizasyonuToolStripMenuItem;
+        private OpenFileDialog openFileDialog2;
     }
 }
 
