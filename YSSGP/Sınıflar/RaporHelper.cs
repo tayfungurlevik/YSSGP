@@ -403,7 +403,105 @@ namespace YSSGP.Sınıflar
 
             doc.Add(new Paragraph("4.2 Çalışma Yöntemleri, Ekipman ve Eğitimli Personel İhtiyacının Belirlenmesi ").SetFont(font).SetFontSize(12).SetBold());
 
+            for (int i = 0; i < Proje.plan.yapilacakisler.Count; i++)
+            {
+                doc.Add(new Paragraph("Yapılacak İş: " +Proje.plan.yapilacakisler[i].isinadi).SetBold().SetFont(font).SetFontSize(12));
+                doc.Add(new Paragraph("Çalışma Yöntemi").SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER).SetBold().SetFont(font).SetFontSize(12));
+                doc.Add(new Paragraph("Teknik Açıklama ve Gereklilikler").SetBold().SetFont(font).SetFontSize(12).SetUnderline());
+                doc.Add(new Paragraph("Yapım Tekniği ve Teknolojisi").SetItalic().SetFont(font).SetFontSize(12));
+                List yapımtekniklist = new List();
+                yapımtekniklist.SetFont(font);
+                yapımtekniklist.SetFontSize(12);
 
+                for (int j = 0; j < Proje.plan.yapilacakisler[i].yontem.yapımtekniği.Count; j++)
+                {
+                    ListItem item = new ListItem(Proje.plan.yapilacakisler[i].yontem.yapımtekniği[j]);
+                    yapımtekniklist.Add(item);
+                }
+                doc.Add(yapımtekniklist);
+                doc.Add(new Paragraph("İş Ekipmanı Kullanımı").SetItalic().SetFont(font).SetFontSize(12));
+                List isekipmanlist = new List();
+                isekipmanlist.SetFont(font);
+                isekipmanlist.SetFontSize(12);
+
+                for (int j = 0; j < Proje.plan.yapilacakisler[i].yontem.işekipmanikullanimi.Count; j++)
+                {
+                    ListItem item = new ListItem(Proje.plan.yapilacakisler[i].yontem.işekipmanikullanimi[j]);
+                    isekipmanlist.Add(item);
+                }
+                doc.Add(isekipmanlist);
+                doc.Add(new Paragraph("Kimyasal Madde Kullanımı").SetItalic().SetFont(font).SetFontSize(12));
+                List kimyasallist = new List();
+                kimyasallist.SetFont(font);
+                kimyasallist.SetFontSize(12);
+
+                for (int j = 0; j < Proje.plan.yapilacakisler[i].yontem.kimyasalmaddekullanimi.Count; j++)
+                {
+                    ListItem item = new ListItem(Proje.plan.yapilacakisler[i].yontem.kimyasalmaddekullanimi[j]);
+                    kimyasallist.Add(item);
+                }
+                doc.Add(kimyasallist);
+                doc.Add(new Paragraph("Çalışma Alanına Erişim").SetBold().SetFont(font).SetFontSize(12).SetUnderline());
+                List calismalist = new List();
+                calismalist.SetFont(font);
+                calismalist.SetFontSize(12);
+
+                for (int j = 0; j < Proje.plan.yapilacakisler[i].yontem.calismaalaninaerisim.Count; j++)
+                {
+                    ListItem item = new ListItem(Proje.plan.yapilacakisler[i].yontem.calismaalaninaerisim[j]);
+                    calismalist.Add(item);
+                }
+                doc.Add(calismalist);
+                doc.Add(new Paragraph("Malzemelerin Taşınması").SetBold().SetFont(font).SetFontSize(12).SetUnderline());
+                List malzemelist = new List();
+                malzemelist.SetFont(font);
+                malzemelist.SetFontSize(12);
+
+                for (int j = 0; j < Proje.plan.yapilacakisler[i].yontem.malzemelerintasinmasi.Count; j++)
+                {
+                    ListItem item = new ListItem(Proje.plan.yapilacakisler[i].yontem.malzemelerintasinmasi[j]);
+                    malzemelist.Add(item);
+                }
+                doc.Add(malzemelist);
+
+                Table calismayontemTablo = new Table(3);
+                calismayontemTablo.SetFontSize(12);
+                calismayontemTablo.SetFont(font);
+                calismayontemTablo.AddCell("İş Ekipmanı");
+                calismayontemTablo.AddCell("Kullanılacak Kimyasallar");
+                calismayontemTablo.AddCell("Eğitimli Personel İhtiyacı");
+                List isekipmanlist2 = new List();
+                isekipmanlist2.SetFont(font);
+                isekipmanlist2.SetFontSize(12);
+                for (int k = 0; k < Proje.plan.yapilacakisler[i].yontem.isekipmani.Count; k++)
+                {
+                    ListItem item = new ListItem(Proje.plan.yapilacakisler[i].yontem.isekipmani[k]);
+                    isekipmanlist2.Add(item);
+                }
+                calismayontemTablo.AddCell(isekipmanlist2);
+                List kimyasallist2 = new List();
+                kimyasallist2.SetFont(font);
+                kimyasallist2.SetFontSize(12);
+                for (int k = 0; k < Proje.plan.yapilacakisler[i].yontem.kullanilacakkimyasallar.Count; k++)
+                {
+                    ListItem item = new ListItem(Proje.plan.yapilacakisler[i].yontem.kullanilacakkimyasallar[k]);
+                    kimyasallist2.Add(item);
+                }
+                calismayontemTablo.AddCell(kimyasallist2);
+                List egitimlist = new List();
+                egitimlist.SetFont(font);
+                egitimlist.SetFontSize(12);
+                for (int k = 0; k < Proje.plan.yapilacakisler[i].yontem.egitimlipersonelihtiyaci.Count; k++)
+                {
+                    ListItem item = new ListItem(Proje.plan.yapilacakisler[i].yontem.egitimlipersonelihtiyaci[k]);
+                    egitimlist.Add(item);
+                }
+                calismayontemTablo.AddCell(egitimlist);
+                doc.Add(calismayontemTablo);
+
+
+            }
+            
             doc.Close();
         }
     }
