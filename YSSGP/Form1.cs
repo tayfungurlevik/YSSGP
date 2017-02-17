@@ -377,159 +377,7 @@ namespace YSSGP
             }
         }
 
-        private void projeyeAitBilgilerToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.ProjeBilgileri);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void işverenİleİlgiliBilgilerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.İşverenBilgileri);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.altisverenler);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.kendinamına);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void işvereninGörevVeSorumluluklarıToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.isv_gorev);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void altİşvereninGörevVeSorumluluklarıToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.alt_gorev);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.kendinamına_gorev);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.ProjeSorumlusu);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void sToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.saglık_hazirlik);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void sağlıkVeGüvenlikKoordinatörüToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.saglık_uygulama);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.isguzmanlar);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.hekimler);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.CalisanTemsilcileri);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void işAkışPlanıToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.İşakışPlanı);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.ÇalışmaYöntemleri);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.YapıSahasıRisk);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.İşleAlakalı);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.çakışanişler);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.UcuncuTaraf);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void şantiyeKurallarıToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.ŞantiyeKuralları);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void genelKurallarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.ŞantiyeKuralları);
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        private void ziyaretçilerİleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm form = YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.Prosedür);
-            form.MdiParent = this;
-            form.Show();
-        }
+        
 
         private void yönetiminTaahütüToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -593,13 +441,7 @@ namespace YSSGP
             System.Diagnostics.Process.Start(path);
         }
 
-        private void yazdırToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            YazdırForm f= YazdırForm.FormuGoster(YazdırForm.YazdırmaIslemi.TümRapor);
-            f.MdiParent = this;
-            f.Show();
-            
-        }
+        
 
         private void sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -625,6 +467,27 @@ namespace YSSGP
             if (saveFileDialog2.ShowDialog()==DialogResult.OK)
             {
                 RaporHelper.Bolum4Yazdir(saveFileDialog2.FileName);
+
+                Process.Start(saveFileDialog2.FileName);
+            }
+        }
+
+        private void risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                RaporHelper.Bolum5Yazdir(saveFileDialog2.FileName);
+
+                Process.Start(saveFileDialog2.FileName);
+            }
+
+        }
+
+        private void şantiyeKurallarıToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                RaporHelper.Bolum6Yazdir(saveFileDialog2.FileName);
 
                 Process.Start(saveFileDialog2.FileName);
             }

@@ -15,5 +15,15 @@ namespace YSSGP
         {
             InitializeComponent();
         }
+
+        private void YardimForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            axShockwaveFlash1.Movie = "https://www.youtube.com/v/"+e.Node.Tag.ToString();
+        }
     }
 }

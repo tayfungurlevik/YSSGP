@@ -41,32 +41,10 @@ namespace YSSGP
             this.yazdırToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yönetimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projeBilgileriToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.genelBilgilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projeyeAitBilgilerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.işverenİleİlgiliBilgilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.işvereninGörevVeSorumluluklarıToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.altİşvereninGörevVeSorumluluklarıToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sağlıkVeGüvenlikKoordinatörüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.işlerinYönetimiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.işAkışPlanıToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.şantiyeKurallarıToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.genelKurallarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ziyaretçilerİleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.şantiyeKurallarıToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.projeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projeBilgileriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yönetiminTaahütüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -194,12 +172,12 @@ namespace YSSGP
             this.projeBilgileriToolStripMenuItem1,
             this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem,
             this.işlerinYönetimiToolStripMenuItem1,
-            this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1});
+            this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1,
+            this.şantiyeKurallarıToolStripMenuItem2});
             this.yazdırToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("yazdırToolStripMenuItem.Image")));
             this.yazdırToolStripMenuItem.Name = "yazdırToolStripMenuItem";
             this.yazdırToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.yazdırToolStripMenuItem.Text = "Yazdır";
-            this.yazdırToolStripMenuItem.Click += new System.EventHandler(this.yazdırToolStripMenuItem_Click);
             // 
             // yönetimToolStripMenuItem
             // 
@@ -210,221 +188,38 @@ namespace YSSGP
             // 
             // projeBilgileriToolStripMenuItem1
             // 
-            this.projeBilgileriToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.genelBilgilerToolStripMenuItem});
             this.projeBilgileriToolStripMenuItem1.Name = "projeBilgileriToolStripMenuItem1";
             this.projeBilgileriToolStripMenuItem1.Size = new System.Drawing.Size(311, 22);
             this.projeBilgileriToolStripMenuItem1.Text = "Proje Bilgileri";
             this.projeBilgileriToolStripMenuItem1.Click += new System.EventHandler(this.projeBilgileriToolStripMenuItem1_Click);
             // 
-            // genelBilgilerToolStripMenuItem
-            // 
-            this.genelBilgilerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.projeyeAitBilgilerToolStripMenuItem1,
-            this.işverenİleİlgiliBilgilerToolStripMenuItem,
-            this.altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem,
-            this.kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1});
-            this.genelBilgilerToolStripMenuItem.Name = "genelBilgilerToolStripMenuItem";
-            this.genelBilgilerToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.genelBilgilerToolStripMenuItem.Text = "Genel Bilgiler";
-            // 
-            // projeyeAitBilgilerToolStripMenuItem1
-            // 
-            this.projeyeAitBilgilerToolStripMenuItem1.Name = "projeyeAitBilgilerToolStripMenuItem1";
-            this.projeyeAitBilgilerToolStripMenuItem1.Size = new System.Drawing.Size(320, 22);
-            this.projeyeAitBilgilerToolStripMenuItem1.Text = "Projeye Ait Bilgiler";
-            this.projeyeAitBilgilerToolStripMenuItem1.Click += new System.EventHandler(this.projeyeAitBilgilerToolStripMenuItem1_Click);
-            // 
-            // işverenİleİlgiliBilgilerToolStripMenuItem
-            // 
-            this.işverenİleİlgiliBilgilerToolStripMenuItem.Name = "işverenİleİlgiliBilgilerToolStripMenuItem";
-            this.işverenİleİlgiliBilgilerToolStripMenuItem.Size = new System.Drawing.Size(320, 22);
-            this.işverenİleİlgiliBilgilerToolStripMenuItem.Text = "İşveren İle İlgili Bilgiler";
-            this.işverenİleİlgiliBilgilerToolStripMenuItem.Click += new System.EventHandler(this.işverenİleİlgiliBilgilerToolStripMenuItem_Click);
-            // 
-            // altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem
-            // 
-            this.altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem.Name = "altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem";
-            this.altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem.Size = new System.Drawing.Size(320, 22);
-            this.altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem.Text = "Alt İşveren/Alt Yükleniciye Ait Bilgiler";
-            this.altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem.Click += new System.EventHandler(this.altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem_Click);
-            // 
-            // kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1
-            // 
-            this.kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1.Name = "kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1";
-            this.kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1.Size = new System.Drawing.Size(320, 22);
-            this.kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1.Text = "Kendi Nam ve Hesabına Çalışanlara Ait Bilgiler ";
-            this.kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1.Click += new System.EventHandler(this.kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1_Click);
-            // 
             // sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem
             // 
-            this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.işvereninGörevVeSorumluluklarıToolStripMenuItem1,
-            this.altİşvereninGörevVeSorumluluklarıToolStripMenuItem1,
-            this.kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1,
-            this.projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem,
-            this.sToolStripMenuItem,
-            this.sağlıkVeGüvenlikKoordinatörüToolStripMenuItem,
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem,
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem,
-            this.çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem});
             this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem.Name = "sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem";
             this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
             this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem.Text = "Sağlık ve Güvenlik Organizasyonu";
             this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem.Click += new System.EventHandler(this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem_Click);
             // 
-            // işvereninGörevVeSorumluluklarıToolStripMenuItem1
-            // 
-            this.işvereninGörevVeSorumluluklarıToolStripMenuItem1.Name = "işvereninGörevVeSorumluluklarıToolStripMenuItem1";
-            this.işvereninGörevVeSorumluluklarıToolStripMenuItem1.Size = new System.Drawing.Size(489, 22);
-            this.işvereninGörevVeSorumluluklarıToolStripMenuItem1.Text = "İşverenin Görev ve Sorumlulukları";
-            this.işvereninGörevVeSorumluluklarıToolStripMenuItem1.Click += new System.EventHandler(this.işvereninGörevVeSorumluluklarıToolStripMenuItem1_Click);
-            // 
-            // altİşvereninGörevVeSorumluluklarıToolStripMenuItem1
-            // 
-            this.altİşvereninGörevVeSorumluluklarıToolStripMenuItem1.Name = "altİşvereninGörevVeSorumluluklarıToolStripMenuItem1";
-            this.altİşvereninGörevVeSorumluluklarıToolStripMenuItem1.Size = new System.Drawing.Size(489, 22);
-            this.altİşvereninGörevVeSorumluluklarıToolStripMenuItem1.Text = "Alt İşverenin Görev ve Sorumlulukları";
-            this.altİşvereninGörevVeSorumluluklarıToolStripMenuItem1.Click += new System.EventHandler(this.altİşvereninGörevVeSorumluluklarıToolStripMenuItem1_Click);
-            // 
-            // kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1
-            // 
-            this.kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1.Name = "kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1";
-            this.kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1.Size = new System.Drawing.Size(489, 22);
-            this.kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1.Text = "Kendi Nam ve Hesabına Çalışanların Görev ve Sorumlulukları";
-            this.kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1.Click += new System.EventHandler(this.kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1_Click);
-            // 
-            // projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem
-            // 
-            this.projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem.Name = "projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem";
-            this.projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem.Size = new System.Drawing.Size(489, 22);
-            this.projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem.Text = "Proje Sorumlusu, Görev ve Sorumlulukları";
-            this.projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem.Click += new System.EventHandler(this.projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem_Click);
-            // 
-            // sToolStripMenuItem
-            // 
-            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
-            this.sToolStripMenuItem.Size = new System.Drawing.Size(489, 22);
-            this.sToolStripMenuItem.Text = "Sağlık ve Güvenlik Koordinatörü (Hazırlık Aşaması), Görev ve Sorumlulukları";
-            this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
-            // 
-            // sağlıkVeGüvenlikKoordinatörüToolStripMenuItem
-            // 
-            this.sağlıkVeGüvenlikKoordinatörüToolStripMenuItem.Name = "sağlıkVeGüvenlikKoordinatörüToolStripMenuItem";
-            this.sağlıkVeGüvenlikKoordinatörüToolStripMenuItem.Size = new System.Drawing.Size(489, 22);
-            this.sağlıkVeGüvenlikKoordinatörüToolStripMenuItem.Text = "Sağlık ve Güvenlik Koordinatörü (Uygulama Aşaması), Görev ve Sorumlulukları ";
-            this.sağlıkVeGüvenlikKoordinatörüToolStripMenuItem.Click += new System.EventHandler(this.sağlıkVeGüvenlikKoordinatörüToolStripMenuItem_Click);
-            // 
-            // asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem
-            // 
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem.Name = "asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem";
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem.Size = new System.Drawing.Size(489, 22);
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem.Text = "Asıl İşveren/Ana Yüklenici İş Güvenliği Uzman(lar)ı, Görev ve Sorumlulukları";
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem.Click += new System.EventHandler(this.asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem_Click);
-            // 
-            // asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem
-            // 
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem.Name = "asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem" +
-    "";
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem.Size = new System.Drawing.Size(489, 22);
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem.Text = "Asıl İşveren/Ana Yüklenici İşyeri Hekim(ler)i, Görev ve Sorumlulukları";
-            this.asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem.Click += new System.EventHandler(this.asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem_Click);
-            // 
-            // çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem
-            // 
-            this.çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem.Name = "çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem";
-            this.çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem.Size = new System.Drawing.Size(489, 22);
-            this.çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem.Text = "Çalışan Temsilcileri, Görev ve Sorumlulukları";
-            this.çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem.Click += new System.EventHandler(this.çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem_Click);
-            // 
             // işlerinYönetimiToolStripMenuItem1
             // 
-            this.işlerinYönetimiToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.işAkışPlanıToolStripMenuItem1,
-            this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem1});
             this.işlerinYönetimiToolStripMenuItem1.Name = "işlerinYönetimiToolStripMenuItem1";
             this.işlerinYönetimiToolStripMenuItem1.Size = new System.Drawing.Size(311, 22);
             this.işlerinYönetimiToolStripMenuItem1.Text = "İşlerin Yönetimi";
             this.işlerinYönetimiToolStripMenuItem1.Click += new System.EventHandler(this.işlerinYönetimiToolStripMenuItem1_Click);
             // 
-            // işAkışPlanıToolStripMenuItem1
-            // 
-            this.işAkışPlanıToolStripMenuItem1.Name = "işAkışPlanıToolStripMenuItem1";
-            this.işAkışPlanıToolStripMenuItem1.Size = new System.Drawing.Size(462, 22);
-            this.işAkışPlanıToolStripMenuItem1.Text = "İş Akış Planı";
-            this.işAkışPlanıToolStripMenuItem1.Click += new System.EventHandler(this.işAkışPlanıToolStripMenuItem1_Click);
-            // 
-            // çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem1
-            // 
-            this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem1.Name = "çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuIte" +
-    "m1";
-            this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem1.Size = new System.Drawing.Size(462, 22);
-            this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem1.Text = "Ç&alışma Yöntemleri, Ekipman ve Eğitimli Personel İhtiyacının Belirlenmesi ";
-            this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem1.Click += new System.EventHandler(this.çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem1_Click);
-            // 
             // risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1
             // 
-            this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1,
-            this.işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1,
-            this.zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1,
-            this.üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1,
-            this.şantiyeKurallarıToolStripMenuItem1});
             this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Name = "risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1";
             this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Size = new System.Drawing.Size(311, 22);
             this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Text = "&Risklerin ve Kontrol Tedbirlerinin Belirlenmesi";
+            this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Click += new System.EventHandler(this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1_Click);
             // 
-            // yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1
+            // şantiyeKurallarıToolStripMenuItem2
             // 
-            this.yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Name = "yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMe" +
-    "nuItem1";
-            this.yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Size = new System.Drawing.Size(479, 22);
-            this.yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Text = "&Yapı Sahasının Geneline Etki Eden Riskler ve Kontrol Tedbirlerinin Belirlenmesi";
-            this.yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Click += new System.EventHandler(this.yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1_Click);
-            // 
-            // işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1
-            // 
-            this.işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Name = "işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1";
-            this.işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Size = new System.Drawing.Size(479, 22);
-            this.işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Text = "İşle Alakalı Muhtemel Riskler ve Kontrol Tedbirlerinin Belirlenmesi ";
-            this.işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1.Click += new System.EventHandler(this.işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1_Click);
-            // 
-            // zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1
-            // 
-            this.zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1.Name = "zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1";
-            this.zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1.Size = new System.Drawing.Size(479, 22);
-            this.zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1.Text = "Zaman ve Mekân Açısından Çakışan İşlerden Kaynaklanan Riskler ";
-            this.zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1.Click += new System.EventHandler(this.zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1_Click);
-            // 
-            // üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1
-            // 
-            this.üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1.Name = "üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1";
-            this.üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1.Size = new System.Drawing.Size(479, 22);
-            this.üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1.Text = "Üçüncü taraflara olan etkisinin değerlendirilmesi ";
-            this.üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1.Click += new System.EventHandler(this.üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1_Click);
-            // 
-            // şantiyeKurallarıToolStripMenuItem1
-            // 
-            this.şantiyeKurallarıToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.genelKurallarToolStripMenuItem,
-            this.ziyaretçilerİleToolStripMenuItem});
-            this.şantiyeKurallarıToolStripMenuItem1.Name = "şantiyeKurallarıToolStripMenuItem1";
-            this.şantiyeKurallarıToolStripMenuItem1.Size = new System.Drawing.Size(479, 22);
-            this.şantiyeKurallarıToolStripMenuItem1.Text = "Şantiye Kuralları";
-            // 
-            // genelKurallarToolStripMenuItem
-            // 
-            this.genelKurallarToolStripMenuItem.Name = "genelKurallarToolStripMenuItem";
-            this.genelKurallarToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.genelKurallarToolStripMenuItem.Text = "Genel Kurallar";
-            this.genelKurallarToolStripMenuItem.Click += new System.EventHandler(this.genelKurallarToolStripMenuItem_Click);
-            // 
-            // ziyaretçilerİleToolStripMenuItem
-            // 
-            this.ziyaretçilerİleToolStripMenuItem.Name = "ziyaretçilerİleToolStripMenuItem";
-            this.ziyaretçilerİleToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.ziyaretçilerİleToolStripMenuItem.Text = "Ziyaretçilerle ilgili prosedürler";
-            this.ziyaretçilerİleToolStripMenuItem.Click += new System.EventHandler(this.ziyaretçilerİleToolStripMenuItem_Click);
+            this.şantiyeKurallarıToolStripMenuItem2.Name = "şantiyeKurallarıToolStripMenuItem2";
+            this.şantiyeKurallarıToolStripMenuItem2.Size = new System.Drawing.Size(311, 22);
+            this.şantiyeKurallarıToolStripMenuItem2.Text = "Şantiye Kuralları";
+            this.şantiyeKurallarıToolStripMenuItem2.Click += new System.EventHandler(this.şantiyeKurallarıToolStripMenuItem2_Click);
             // 
             // projeToolStripMenuItem
             // 
@@ -856,32 +651,9 @@ namespace YSSGP
         private System.Windows.Forms.ToolStripMenuItem yazdırToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yönetimToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem projeBilgileriToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem genelBilgilerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem projeyeAitBilgilerToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem işverenİleİlgiliBilgilerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altİşverenAltYükleniciyeAitBilgilerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem işvereninGörevVeSorumluluklarıToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem altİşvereninGörevVeSorumluluklarıToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem kendiNamVeHesabınaÇalışanlarınGörevVeSorumluluklarıToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem projeSorumlusuGörevVeSorumluluklarıToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sağlıkVeGüvenlikKoordinatörüToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asılİşverenAnaYükleniciİşGüvenliğiUzmanılarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem asılİşverenAnaYükleniciİşGüvenliğiUzmanlarıGörevVeSorumluluklarıToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem çalışanTemsilcileriGörevVeSorumluluklarıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem işlerinYönetimiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem işAkışPlanıToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem çalışmaYöntemleriEkipmanVeEğitimliPersonelİhtiyacınınBelirlenmesiToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem yapıSahasınınGenelineEtkiEdenRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem işleAlakalıMuhtemelRisklerVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem zamanVeMekânAçısındanÇakışanİşlerdenKaynaklananRisklerToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem üçüncüTaraflaraOlanEtkisininDeğerlendirilmesiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem şantiyeKurallarıToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem genelKurallarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ziyaretçilerİleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yönetiminTaahütüToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
@@ -899,6 +671,7 @@ namespace YSSGP
         private SaveFileDialog saveFileDialog2;
         private ToolStripMenuItem işOrganizasyonuToolStripMenuItem;
         private OpenFileDialog openFileDialog2;
+        private ToolStripMenuItem şantiyeKurallarıToolStripMenuItem2;
     }
 }
 

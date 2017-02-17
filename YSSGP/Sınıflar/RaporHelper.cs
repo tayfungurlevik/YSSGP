@@ -25,7 +25,7 @@ namespace YSSGP.Sınıflar
             PdfWriter pdfyazici = new PdfWriter(dosya);
             PdfDocument pdf = new PdfDocument(pdfyazici);
             Document doc = new Document(pdf, PageSize.A4);
-            doc.SetMargins(20, 20, 20, 20);
+            doc.SetMargins(40, 60, 30, 30);
             //baseFont = BaseFont.CreateFont("C:\\Windows\\Fonts\\Arial.ttf", "windows-1254", true);
             PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254",true);
 
@@ -160,7 +160,7 @@ namespace YSSGP.Sınıflar
             PdfWriter pdfyazici = new PdfWriter(fileName);
             PdfDocument pdf = new PdfDocument(pdfyazici);
             Document doc = new Document(pdf, PageSize.A4);
-            doc.SetMargins(20, 20, 20, 20);
+            doc.SetMargins(40, 60, 30, 30);
             doc.SetTextAlignment(iText.Layout.Properties.TextAlignment.JUSTIFIED);
             PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
 
@@ -375,7 +375,7 @@ namespace YSSGP.Sınıflar
             PdfWriter pdfyazici = new PdfWriter(fileName);
             PdfDocument pdf = new PdfDocument(pdfyazici);
             Document doc = new Document(pdf, PageSize.A4);
-            doc.SetMargins(20, 20, 20, 20);
+            doc.SetMargins(40, 60, 30, 30);
             doc.SetTextAlignment(iText.Layout.Properties.TextAlignment.JUSTIFIED);
             PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
 
@@ -501,8 +501,186 @@ namespace YSSGP.Sınıflar
 
 
             }
+
             
             doc.Close();
+        }
+
+        internal static void Bolum6Yazdir(string fileName)
+        {
+            PdfWriter pdfyazici = new PdfWriter(fileName);
+            PdfDocument pdf = new PdfDocument(pdfyazici);
+            Document doc = new Document(pdf, PageSize.A4);
+            doc.SetMargins(40, 60, 30, 30);
+            doc.SetTextAlignment(iText.Layout.Properties.TextAlignment.JUSTIFIED);
+            PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
+
+
+            doc.Add(new Paragraph("5. ŞANTİYE KURALLARI").SetFont(font).SetFontSize(24));
+
+            List santiyeliste = new List();
+            santiyeliste.SetFont(font);
+            santiyeliste.SetFontSize(12);
+            for (int i = 0; i < Proje.kurallar.kurallar.Count; i++)
+            {
+                ListItem item = new ListItem(Proje.kurallar.kurallar[i]);
+                santiyeliste.Add(item);
+            }
+            doc.Add(santiyeliste);
+            doc.Add(new Paragraph("Ziyaretçilerle ilgili prosedürler").SetFont(font).SetFontSize(12).SetBold());
+            List ziyaretciliste = new List();
+            ziyaretciliste.SetFont(font);
+            ziyaretciliste.SetFontSize(12);
+            for (int i = 0; i < Proje.kurallar.ziyaretciprosedur.Count; i++)
+            {
+                ListItem item = new ListItem(Proje.kurallar.ziyaretciprosedur[i]);
+                ziyaretciliste.Add(item);
+            }
+            doc.Add(ziyaretciliste);
+            doc.Close();
+        }
+
+        internal static void Bolum5Yazdir(string fileName)
+        {
+
+
+            PdfWriter pdfyazici = new PdfWriter(fileName);
+            PdfDocument pdf = new PdfDocument(pdfyazici);
+            Document doc = new Document(pdf, PageSize.A4);
+            doc.SetMargins(40, 60, 30, 30);
+            doc.SetTextAlignment(iText.Layout.Properties.TextAlignment.JUSTIFIED);
+            PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
+
+
+            doc.Add(new Paragraph("5. RİSKLERİN VE KONTROL TEDBİRLERİNİN BELİRLENMESİ").SetFont(font).SetFontSize(24));
+
+            doc.Add(new Paragraph("5.1 Yapı Sahasının Geneline Etki Eden Riskler ve Kontrol Tedbirlerinin Belirlenmesi ").SetFont(font).SetFontSize(12).SetBold());
+            Table yapisahasınaozgutablo = new Table(3);
+            yapisahasınaozgutablo.SetFont(font);
+            yapisahasınaozgutablo.SetFontSize(12);
+            Cell baslik = new Cell(1, 3);
+            baslik.SetFont(font);
+            baslik.SetFontSize(12);
+            baslik.SetBold().SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+            baslik.Add("Yapı Sahasının Geneline Özgü");
+            yapisahasınaozgutablo.AddCell(baslik);
+            
+            yapisahasınaozgutablo.AddCell("Tehlike Kaynağı");
+            yapisahasınaozgutablo.AddCell("Riskler");
+            yapisahasınaozgutablo.AddCell("Kontrol Önlemi");
+
+            for (int i = 0; i < Proje.yapisahasiningenelozgutehlikeler.Count; i++)
+            {
+                yapisahasınaozgutablo.AddCell(Proje.yapisahasiningenelozgutehlikeler[i].tehlikekayangi);
+                yapisahasınaozgutablo.AddCell(Proje.yapisahasiningenelozgutehlikeler[i].risk);
+                yapisahasınaozgutablo.AddCell(Proje.yapisahasiningenelozgutehlikeler[i].onlem);
+
+            }
+            Cell baslik2 = new Cell(1, 3);
+            baslik2.SetFont(font);
+            baslik2.SetFontSize(12);
+            baslik2.SetBold().SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+            baslik2.Add("Biyolojik");
+            yapisahasınaozgutablo.AddCell(baslik2);
+
+            yapisahasınaozgutablo.AddCell("Tehlike Kaynağı");
+            yapisahasınaozgutablo.AddCell("Riskler");
+            yapisahasınaozgutablo.AddCell("Kontrol Önlemi");
+            for (int i = 0; i < Proje.biyolojiktehlikeler.Count; i++)
+            {
+                yapisahasınaozgutablo.AddCell(Proje.biyolojiktehlikeler[i].tehlikekayangi);
+                yapisahasınaozgutablo.AddCell(Proje.biyolojiktehlikeler[i].risk);
+                yapisahasınaozgutablo.AddCell(Proje.biyolojiktehlikeler[i].onlem);
+
+            }
+            doc.Add(yapisahasınaozgutablo);
+            doc.Add(new Paragraph("5.2 İşle Alakalı Muhtemel Riskler ve Kontrol Tedbirlerinin Belirlenmesi ").SetFont(font).SetFontSize(12).SetBold());
+            for (int i = 0; i < Proje.plan.yapilacakisler.Count; i++)
+            {
+                doc.Add(new Paragraph("Yapılacak İş: " + Proje.plan.yapilacakisler[i].isinadi).SetFont(font).SetFontSize(12).SetBold());
+                Table fizikseltablo = new Table(3);
+                fizikseltablo.SetFontSize(12).SetFont(font);
+                Cell baslikfiziksel = new Cell(1, 3);
+                baslikfiziksel.Add("Fiziksel");
+                baslikfiziksel.SetFont(font).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+                baslikfiziksel.SetFontSize(12);
+                baslikfiziksel.SetBold();
+                fizikseltablo.AddCell(baslikfiziksel);
+                fizikseltablo.AddCell("Tehlike Kaynağı");
+                fizikseltablo.AddCell("Riskler");
+                fizikseltablo.AddCell("Kontrol Önlemi");
+                for (int j = 0; j < Proje.plan.yapilacakisler[i].fizikseltehlikeler.Count; j++)
+                {
+                    fizikseltablo.AddCell(Proje.plan.yapilacakisler[i].fizikseltehlikeler[j].tehlikekayangi);
+                    fizikseltablo.AddCell(Proje.plan.yapilacakisler[i].fizikseltehlikeler[j].risk);
+                    fizikseltablo.AddCell(Proje.plan.yapilacakisler[i].fizikseltehlikeler[j].onlem);
+
+                }
+                doc.Add(fizikseltablo);
+                Table kimyasaltablo = new Table(3);
+                kimyasaltablo.SetFontSize(12).SetFont(font);
+                Cell baslikkimyasal = new Cell(1, 3);
+                baslikkimyasal.Add("Fiziksel");
+                baslikkimyasal.SetFont(font).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
+                baslikkimyasal.SetFontSize(12);
+                baslikkimyasal.SetBold();
+                kimyasaltablo.AddCell(baslikkimyasal);
+                kimyasaltablo.AddCell("Tehlike Kaynağı");
+                kimyasaltablo.AddCell("Riskler");
+                kimyasaltablo.AddCell("Kontrol Önlemi");
+                for (int j = 0; j < Proje.plan.yapilacakisler[i].kimyasaltehlikeler.Count; j++)
+                {
+                    kimyasaltablo.AddCell(Proje.plan.yapilacakisler[i].kimyasaltehlikeler[j].tehlikekayangi);
+                    kimyasaltablo.AddCell(Proje.plan.yapilacakisler[i].kimyasaltehlikeler[j].risk);
+                    kimyasaltablo.AddCell(Proje.plan.yapilacakisler[i].kimyasaltehlikeler[j].onlem);
+
+                }
+                doc.Add(kimyasaltablo);
+            }
+            doc.Add(new Paragraph("5.3	Zaman ve Mekân Açısından Çakışan İşlerden Kaynaklanan Riskler").SetFont(font).SetFontSize(12).SetBold());
+            
+
+            Table cakisanislerTablosu = new Table(6);
+            cakisanislerTablosu.SetFont(font);
+            cakisanislerTablosu.SetFontSize(12);
+            cakisanislerTablosu.AddCell("Çakışan İşler");
+            cakisanislerTablosu.AddCell("Çakışma Başlangıç Tarihi");
+            cakisanislerTablosu.AddCell("Çakışma Bitiş Tarihi");
+            cakisanislerTablosu.AddCell("Risk");
+            cakisanislerTablosu.AddCell("Etkilenen çalışanlar/Etki altındaki bölge");
+            cakisanislerTablosu.AddCell("Kontrol Önlemleri");
+
+            for (int i = 0; i < Proje.cakisanisler.Count; i++)
+            {
+                cakisanislerTablosu.AddCell(Proje.cakisanisler[i].iş1.isinadi + " - " + Proje.cakisanisler[i].iş2.isinadi);
+                cakisanislerTablosu.AddCell(Proje.cakisanisler[i].çakışmabaşlangıç.ToShortDateString());
+                cakisanislerTablosu.AddCell(Proje.cakisanisler[i].çakışmabitiş.ToShortDateString());
+                cakisanislerTablosu.AddCell(Proje.cakisanisler[i].risk);
+                cakisanislerTablosu.AddCell(Proje.cakisanisler[i].Etkilenenler);
+                cakisanislerTablosu.AddCell(Proje.cakisanisler[i].kontrol);
+
+            }
+            doc.Add(cakisanislerTablosu);
+            doc.Add(new Paragraph("5.4	Üçüncü taraflara olan etkisinin değerlendirilmesi ").SetFont(font).SetFontSize(12).SetBold());
+
+            Table ucuncuTablo = new Table(3);
+            ucuncuTablo.SetFont(font);
+            ucuncuTablo.SetFontSize(12);
+            ucuncuTablo.AddCell("Risk");
+            ucuncuTablo.AddCell("Etki altındaki bölge/tesis");
+            ucuncuTablo.AddCell("Kontrol Tedbirleri");
+            for (int i = 0; i < Proje.ucuncutaraflar.Count; i++)
+            {
+                ucuncuTablo.AddCell(Proje.ucuncutaraflar[i].risk);
+                ucuncuTablo.AddCell(Proje.ucuncutaraflar[i].risk);
+                ucuncuTablo.AddCell(Proje.ucuncutaraflar[i].risk);
+
+            }
+            doc.Add(ucuncuTablo);
+
+           
+            doc.Close();
+
         }
     }
 }

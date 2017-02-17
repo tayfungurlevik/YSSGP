@@ -273,12 +273,6 @@
     <Compile Include="YardimForm.Designer.cs">
       <DependentUpon>YardimForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="YazdırForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="YazdırForm.Designer.cs">
-      <DependentUpon>YazdırForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="YonetiminTaahhuduForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,9 +363,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="YardimForm.resx">
       <DependentUpon>YardimForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="YazdırForm.resx">
-      <DependentUpon>YazdırForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YonetiminTaahhuduForm.resx">
       <DependentUpon>YonetiminTaahhuduForm.cs</DependentUpon>
