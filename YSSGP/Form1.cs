@@ -23,8 +23,16 @@ namespace YSSGP
         public Form1()
         {
             InitializeComponent();
+            YeniProje();
         }
-        
+        public Form1(string dos)
+        {
+            InitializeComponent();
+            this.dosya = dos;
+            Proje.DosyadanOku(dos);
+            this.Text = dosya;
+            lblAçıklama.Text = "Açılan dosya: " + dosya;
+        }
         private void altİşToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AltIsverenForm form= AltIsverenForm.FormuGoster(lblAçıklama);
@@ -49,7 +57,7 @@ namespace YSSGP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            YeniProje();
+            
 
         }
 
@@ -491,6 +499,16 @@ namespace YSSGP
 
                 Process.Start(saveFileDialog2.FileName);
             }
+        }
+
+        private void kaynakKodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/tayfungurlevik/YSSGP");
+        }
+
+        private void güncellemeleriDenetleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://sourceforge.net/projects/yssgp/files/");
         }
     }
 }

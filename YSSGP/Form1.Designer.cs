@@ -94,6 +94,8 @@ namespace YSSGP
             this.lblAçıklama = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.güncellemeleriDenetleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kaynakKodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -132,7 +134,7 @@ namespace YSSGP
             // 
             this.yeniProjeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("yeniProjeToolStripMenuItem.Image")));
             this.yeniProjeToolStripMenuItem.Name = "yeniProjeToolStripMenuItem";
-            this.yeniProjeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yeniProjeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.yeniProjeToolStripMenuItem.Text = "&Yeni Proje";
             this.yeniProjeToolStripMenuItem.Click += new System.EventHandler(this.yeniProjeToolStripMenuItem_Click);
             // 
@@ -140,7 +142,7 @@ namespace YSSGP
             // 
             this.açToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("açToolStripMenuItem.Image")));
             this.açToolStripMenuItem.Name = "açToolStripMenuItem";
-            this.açToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.açToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.açToolStripMenuItem.Text = "&Aç";
             this.açToolStripMenuItem.Click += new System.EventHandler(this.açToolStripMenuItem_Click);
             // 
@@ -148,7 +150,7 @@ namespace YSSGP
             // 
             this.kaydetToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kaydetToolStripMenuItem.Image")));
             this.kaydetToolStripMenuItem.Name = "kaydetToolStripMenuItem";
-            this.kaydetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.kaydetToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.kaydetToolStripMenuItem.Text = "&Kaydet";
             this.kaydetToolStripMenuItem.Click += new System.EventHandler(this.kaydetToolStripMenuItem_Click);
             // 
@@ -156,14 +158,14 @@ namespace YSSGP
             // 
             this.farklıKaydetToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("farklıKaydetToolStripMenuItem.Image")));
             this.farklıKaydetToolStripMenuItem.Name = "farklıKaydetToolStripMenuItem";
-            this.farklıKaydetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.farklıKaydetToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.farklıKaydetToolStripMenuItem.Text = "&Farklı Kaydet";
             this.farklıKaydetToolStripMenuItem.Click += new System.EventHandler(this.farklıKaydetToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(138, 6);
             // 
             // yazdırToolStripMenuItem
             // 
@@ -176,7 +178,7 @@ namespace YSSGP
             this.şantiyeKurallarıToolStripMenuItem2});
             this.yazdırToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("yazdırToolStripMenuItem.Image")));
             this.yazdırToolStripMenuItem.Name = "yazdırToolStripMenuItem";
-            this.yazdırToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yazdırToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.yazdırToolStripMenuItem.Text = "Yazdır";
             // 
             // yönetimToolStripMenuItem
@@ -478,7 +480,9 @@ namespace YSSGP
             this.toolStripMenuItem1,
             this.contentsToolStripMenuItem,
             this.toolStripSeparator7,
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.güncellemeleriDenetleToolStripMenuItem,
+            this.kaynakKodToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.helpToolStripMenuItem.Text = "&Yardım";
@@ -581,6 +585,20 @@ namespace YSSGP
             this.openFileDialog2.Filter = "JPEG Dosyası (*.jpeg)|*.jpeg|PNG Dosyası (*.png)|*.png";
             this.openFileDialog2.Title = "İSG Organizasyon Şeması Seç";
             // 
+            // güncellemeleriDenetleToolStripMenuItem
+            // 
+            this.güncellemeleriDenetleToolStripMenuItem.Name = "güncellemeleriDenetleToolStripMenuItem";
+            this.güncellemeleriDenetleToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.güncellemeleriDenetleToolStripMenuItem.Text = "Güncellemeleri Denetle";
+            this.güncellemeleriDenetleToolStripMenuItem.Click += new System.EventHandler(this.güncellemeleriDenetleToolStripMenuItem_Click);
+            // 
+            // kaynakKodToolStripMenuItem
+            // 
+            this.kaynakKodToolStripMenuItem.Name = "kaynakKodToolStripMenuItem";
+            this.kaynakKodToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.kaynakKodToolStripMenuItem.Text = "Kaynak Kod";
+            this.kaynakKodToolStripMenuItem.Click += new System.EventHandler(this.kaynakKodToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -672,6 +690,8 @@ namespace YSSGP
         private ToolStripMenuItem işOrganizasyonuToolStripMenuItem;
         private OpenFileDialog openFileDialog2;
         private ToolStripMenuItem şantiyeKurallarıToolStripMenuItem2;
+        private ToolStripMenuItem güncellemeleriDenetleToolStripMenuItem;
+        private ToolStripMenuItem kaynakKodToolStripMenuItem;
     }
 }
 

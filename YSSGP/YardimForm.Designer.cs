@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YardimForm));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Proje Sorumlusu");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Sağlık ve Güvenlik Koordinatörü ");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("İş Güvenliği Uzmanı ve İşyeri Hekimleri ");
@@ -41,9 +40,16 @@
             System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Üçüncü Taraflara Etkiler");
             System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Şantiye Kuralları ve Ziyaretçi Prosedürleri");
             System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("İş Akış Planı Kullanımı");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Görev ve Sorumluluklar");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Kendi Nam ve Hesabına Çalışanlar");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Yönetimin Taahhüdü");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Proje Bilgileri");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("İşveren Bilgileri");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Alt işveren bilgileri");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YardimForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.axShockwaveFlash1 = new AxShockwaveFlashObjects.AxShockwaveFlash();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.axShockwaveFlash1 = new AxShockwaveFlashObjects.AxShockwaveFlash();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -67,16 +73,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(644, 518);
             this.splitContainer1.SplitterDistance = 214;
             this.splitContainer1.TabIndex = 3;
-            // 
-            // axShockwaveFlash1
-            // 
-            this.axShockwaveFlash1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.axShockwaveFlash1.Enabled = true;
-            this.axShockwaveFlash1.Location = new System.Drawing.Point(0, 0);
-            this.axShockwaveFlash1.Name = "axShockwaveFlash1";
-            this.axShockwaveFlash1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlash1.OcxState")));
-            this.axShockwaveFlash1.Size = new System.Drawing.Size(426, 518);
-            this.axShockwaveFlash1.TabIndex = 3;
             // 
             // treeView1
             // 
@@ -119,6 +115,24 @@
             treeNode12.Name = "Node11";
             treeNode12.Tag = "xtde9skjOEM";
             treeNode12.Text = "İş Akış Planı Kullanımı";
+            treeNode13.Name = "Node0";
+            treeNode13.Tag = "SnP62NKLtQQ";
+            treeNode13.Text = "Görev ve Sorumluluklar";
+            treeNode14.Name = "Node1";
+            treeNode14.Tag = "VXKcddTXH-s";
+            treeNode14.Text = "Kendi Nam ve Hesabına Çalışanlar";
+            treeNode15.Name = "Node2";
+            treeNode15.Tag = "FB192SmXzsI";
+            treeNode15.Text = "Yönetimin Taahhüdü";
+            treeNode16.Name = "Node3";
+            treeNode16.Tag = "o1894pS50Tk";
+            treeNode16.Text = "Proje Bilgileri";
+            treeNode17.Name = "Node4";
+            treeNode17.Tag = "BVEHZXuH_LQ";
+            treeNode17.Text = "İşveren Bilgileri";
+            treeNode18.Name = "Node5";
+            treeNode18.Tag = "JaHTwkudAZc";
+            treeNode18.Text = "Alt işveren bilgileri";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
@@ -131,10 +145,26 @@
             treeNode9,
             treeNode10,
             treeNode11,
-            treeNode12});
+            treeNode12,
+            treeNode13,
+            treeNode14,
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18});
             this.treeView1.Size = new System.Drawing.Size(214, 518);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // axShockwaveFlash1
+            // 
+            this.axShockwaveFlash1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axShockwaveFlash1.Enabled = true;
+            this.axShockwaveFlash1.Location = new System.Drawing.Point(0, 0);
+            this.axShockwaveFlash1.Name = "axShockwaveFlash1";
+            this.axShockwaveFlash1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlash1.OcxState")));
+            this.axShockwaveFlash1.Size = new System.Drawing.Size(426, 518);
+            this.axShockwaveFlash1.TabIndex = 3;
             // 
             // YardimForm
             // 
@@ -143,7 +173,9 @@
             this.ClientSize = new System.Drawing.Size(644, 518);
             this.Controls.Add(this.splitContainer1);
             this.Name = "YardimForm";
-            this.Text = "YardimForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Text = "Yardım";
             this.Load += new System.EventHandler(this.YardimForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
