@@ -26,7 +26,7 @@
     <SupportUrl>http://www.csgb.gov.tr/</SupportUrl>
     <ProductName>YSSGP</ProductName>
     <PublisherName>ÇSGB</PublisherName>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -156,6 +156,32 @@
     <Compile Include="CalismaYontemleriForm.Designer.cs">
       <DependentUpon>CalismaYontemleriForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ek3Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ek3Form.Designer.cs">
+      <DependentUpon>Ek3Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ek4Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ek4Form.Designer.cs">
+      <DependentUpon>Ek4Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ek5Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ek5Form.Designer.cs">
+      <DependentUpon>Ek5Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ek6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ek6Form.Designer.cs">
+      <DependentUpon>Ek6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sınıflar\Ek-5.cs" />
+    <Compile Include="Sınıflar\Ek_4.cs" />
     <Compile Include="ExampleFull.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +260,7 @@
     <Compile Include="Sınıflar\CakisanIsler.cs" />
     <Compile Include="Sınıflar\CalisanTemsilcisi.cs" />
     <Compile Include="Sınıflar\CalismaYontemi.cs" />
+    <Compile Include="Sınıflar\Ek-3.cs" />
     <Compile Include="Sınıflar\Is.cs" />
     <Compile Include="Sınıflar\ISGPersonel.cs" />
     <Compile Include="Sınıflar\ISGUzmani.cs" />
@@ -303,6 +330,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CalismaYontemleriForm.resx">
       <DependentUpon>CalismaYontemleriForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ek3Form.resx">
+      <DependentUpon>Ek3Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ek4Form.resx">
+      <DependentUpon>Ek4Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ek5Form.resx">
+      <DependentUpon>Ek5Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ek6Form.resx">
+      <DependentUpon>Ek6Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExampleFull.resx">
       <DependentUpon>ExampleFull.cs</DependentUpon>

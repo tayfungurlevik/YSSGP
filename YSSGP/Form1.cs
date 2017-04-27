@@ -83,6 +83,9 @@ namespace YSSGP
             Proje.ucuncutaraflar = new List<UcuncuTarafEtki>();
             Proje.kurallar = new ŞantiyeKuralları();
             //Form1.toolStripStatusLabel1.Text = "Yeni proje oluşturuldu.";
+            Proje.ekucmaddeleri = new List<Ek_3>();
+            Proje.ekdortmaddeleri = new List<Ek_4>();
+            Proje.ekbesmaddeleri = new List<Ek_5>();
         }
 
         private void kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -509,6 +512,27 @@ namespace YSSGP
         private void güncellemeleriDenetleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("https://sourceforge.net/projects/yssgp/files/");
+        }
+
+        private void eKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ek3Form f = Ek3Form.FormuGoster(lblAçıklama);
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void eK5SınırlıGirişSağlanacakYerlerListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ek5Form f = Ek5Form.FormuGoster(lblAçıklama);
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void eK4KişiselKoruyucuDonanımListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ek4Form f = Ek4Form.FormuGoster(lblAçıklama);
+            f.MdiParent = this;
+            f.Show();
         }
     }
 }

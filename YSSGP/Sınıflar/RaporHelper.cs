@@ -620,7 +620,7 @@ namespace YSSGP.Sınıflar
                 Table kimyasaltablo = new Table(3);
                 kimyasaltablo.SetFontSize(12).SetFont(font);
                 Cell baslikkimyasal = new Cell(1, 3);
-                baslikkimyasal.Add("Fiziksel");
+                baslikkimyasal.Add("Kimyasal");
                 baslikkimyasal.SetFont(font).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER);
                 baslikkimyasal.SetFontSize(12);
                 baslikkimyasal.SetBold();

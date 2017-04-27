@@ -26,6 +26,9 @@ namespace YSSGP.Sınıflar
         public static List<CakisanIsler> cakisanisler;
         public static List<UcuncuTarafEtki> ucuncutaraflar;
         public static ŞantiyeKuralları kurallar;
+        public static List<Ek_3> ekucmaddeleri;
+        public static List<Ek_4> ekdortmaddeleri;
+        public static List<Ek_5> ekbesmaddeleri;
         public static bool kaydedildi;
         public static void DosyayaYaz(string filename)
         {
@@ -140,6 +143,13 @@ namespace YSSGP.Sınıflar
                     yazici.WriteLine("Begin semadosya");
                     yazici.WriteLine(isgorganizasyonsemasi);
                     yazici.WriteLine("End semadosya");
+                    yazici.WriteLine("Begin ek3ler");
+                    for (int i = 0; i < ekucmaddeleri.Count; i++)
+                    {
+                        yazici.WriteLine(ekucmaddeleri[i].ToString());
+                    }
+                    yazici.WriteLine("End ek3ler");
+
                     
                 }
             }
@@ -901,6 +911,30 @@ namespace YSSGP.Sınıflar
                         {
                             isgorganizasyonsemasi = okuyucu.ReadLine();
                         }
+                        line = okuyucu.ReadLine();
+                        if (line=="Begin ek3ler")
+                        {
+                            List<Ek_3> ekuc = new List<Ek_3>();
+                            while ((line = okuyucu.ReadLine()) != "End ek3ler")
+                            {
+                                
+                                Ek_3 ek = new Ek_3();
+                                ek.İşEkipmanı = line;
+                                ek.İşEkipmanıSahibi = okuyucu.ReadLine();
+                                ek.KişilerinYetkinliği = okuyucu.ReadLine();
+                                ek.Gereklilik = okuyucu.ReadLine();
+                                ekuc.Add(ek);
+                            }
+                            ekucmaddeleri = ekuc;
+                        }
+                        line = okuyucu.ReadLine();
+                        //buraya ek4 eklenecek
+
+                        if (line=="")
+                        {
+
+                        }
+
                     }
                 }
             }
