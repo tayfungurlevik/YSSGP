@@ -29,6 +29,7 @@ namespace YSSGP.Sınıflar
         public static List<Ek_3> ekucmaddeleri;
         public static List<Ek_4> ekdortmaddeleri;
         public static List<Ek_5> ekbesmaddeleri;
+        public static List<Ek_6> ekaltimaddeleri;
         public static bool kaydedildi;
         public static void DosyayaYaz(string filename)
         {
@@ -149,8 +150,26 @@ namespace YSSGP.Sınıflar
                         yazici.WriteLine(ekucmaddeleri[i].ToString());
                     }
                     yazici.WriteLine("End ek3ler");
+                    yazici.WriteLine("Begin ek4ler");
+                    for (int i = 0; i < ekdortmaddeleri.Count; i++)
+                    {
+                        yazici.WriteLine(ekdortmaddeleri[i].ToString());
+                    }
+                    yazici.WriteLine("End ek4ler");
+                    yazici.WriteLine("Begin ek5ler");
+                    for (int i = 0; i < ekbesmaddeleri.Count; i++)
+                    {
+                        yazici.WriteLine(ekbesmaddeleri[i].ToString());
+                    }
+                    yazici.WriteLine("End ek5ler");
+                    yazici.WriteLine("Begin ek6lar");
+                    for (int i = 0; i < ekaltimaddeleri.Count; i++)
+                    {
+                        yazici.WriteLine(ekaltimaddeleri[i].ToString());
+                    }
+                    yazici.WriteLine("End ek6lar");
 
-                    
+
                 }
             }
             catch (Exception ex)
@@ -909,7 +928,8 @@ namespace YSSGP.Sınıflar
                         line = okuyucu.ReadLine();
                         if (line=="Begin semadosya")
                         {
-                            isgorganizasyonsemasi = okuyucu.ReadLine();
+                            while ((line = okuyucu.ReadLine()) != "End semadosya")
+                                isgorganizasyonsemasi = line;
                         }
                         line = okuyucu.ReadLine();
                         if (line=="Begin ek3ler")
@@ -930,9 +950,60 @@ namespace YSSGP.Sınıflar
                         line = okuyucu.ReadLine();
                         //buraya ek4 eklenecek
 
-                        if (line=="")
+                        if (line== "Begin ek4ler")
                         {
+                            List<Ek_4> ekdort = new List<Ek_4>();
+                            while ((line = okuyucu.ReadLine()) != "End ek4ler")
+                            {
 
+                                Ek_4 ek = new Ek_4();
+                                ek.KKD = line;
+                                ek.Kategori = okuyucu.ReadLine();
+                                ek.BakımSüresi = okuyucu.ReadLine();
+                                ek.MakSüre = okuyucu.ReadLine();
+                                ek.Standart = okuyucu.ReadLine();
+                                ekdort.Add(ek);
+                            }
+                            ekdortmaddeleri = ekdort;
+                        }
+                        line = okuyucu.ReadLine();
+                        //buraya ek4 eklenecek
+
+                        if (line == "Begin ek5ler")
+                        {
+                            List<Ek_5> ekbes = new List<Ek_5>();
+                            while ((line = okuyucu.ReadLine()) != "End ek5ler")
+                            {
+
+                                Ek_5 ek = new Ek_5();
+                                ek.YerinTarifi = line;
+                                ek.SınırlıGeçişSebebi = okuyucu.ReadLine();
+                                ek.GirişeİzinliKişi = okuyucu.ReadLine();
+                                ek.Prosedür = okuyucu.ReadLine();
+                                
+                                ekbes.Add(ek);
+                            }
+                            ekbesmaddeleri = ekbes;
+                        }
+                        line = okuyucu.ReadLine();
+                        //buraya ek4 eklenecek
+
+                        if (line == "Begin ek6lar")
+                        {
+                            List<Ek_6> ekalti = new List<Ek_6>();
+                            while ((line = okuyucu.ReadLine()) != "End ek6lar")
+                            {
+
+                                Ek_6 ek = new Ek_6();
+                                ek.EğitimeKatılacaklar = line;
+                                ek.EğitiminKonusu = okuyucu.ReadLine();
+                                ek.HedefveAmaç = okuyucu.ReadLine();
+                                ek.EğitiminSüresi = okuyucu.ReadLine();
+                                ek.eğitimBaslangic = Convert.ToDateTime(okuyucu.ReadLine());
+                                ek.eğitimBitis = Convert.ToDateTime(okuyucu.ReadLine());
+                                ekalti.Add(ek);
+                            }
+                            ekaltimaddeleri = ekalti;
                         }
 
                     }

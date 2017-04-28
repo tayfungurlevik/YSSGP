@@ -33,9 +33,9 @@ namespace YSSGP
 
         private void Ek4Form_Load(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count <= 0)
-            {
-                for (int i = 0; i < Proje.ekdortmaddeleri.Count; i++)
+            dataGridView1.Rows.Clear();
+
+            for (int i = 0; i < Proje.ekdortmaddeleri.Count; i++)
                 {
                     DataGridViewRow yenisatır = new DataGridViewRow();
                     yenisatır.CreateCells(dataGridView1);
@@ -48,12 +48,7 @@ namespace YSSGP
 
                 }
 
-            }
-            else
-            {
-                //eğer gridde veri varsa yenileri eklemeye gerek yok
-                return;
-            }
+            
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -85,6 +80,10 @@ namespace YSSGP
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
+                if (row.Cells[0].Value == null)
+                {
+                    continue;
+                }
                 Ek_4 yeniek = new Ek_4();
                 yeniek.KKD = row.Cells[0].Value.ToString();
                 yeniek.Kategori = row.Cells[1].Value.ToString();
@@ -95,7 +94,7 @@ namespace YSSGP
                 ekdort.Add(yeniek);
             }
             Proje.ekdortmaddeleri = ekdort;
-            aciklamalbl.Text = "İş ekipmaları listesi kaydedildi.";
+            aciklamalbl.Text = "KİŞİSEL KORUYUCU DONANIM LİSTESİ kaydedildi.";
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)

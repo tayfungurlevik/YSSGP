@@ -43,8 +43,7 @@ namespace YSSGP
 
         private void Ek3Form_Load(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count<=0)
-            {
+            dataGridView1.Rows.Clear();
                 for (int i = 0; i < Proje.ekucmaddeleri.Count; i++)
                 {
                     DataGridViewRow yenisatır = new DataGridViewRow();
@@ -57,12 +56,7 @@ namespace YSSGP
 
                 }
                 
-            }
-            else
-            {
-                //eğer gridde veri varsa yenileri eklemeye gerek yok
-                return;
-            }
+            
                
         }
 
@@ -94,6 +88,10 @@ namespace YSSGP
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
+                if (row.Cells[0].Value==null)
+                {
+                    continue;
+                }
                 Ek_3 yeniek3 = new Ek_3();
                 yeniek3.İşEkipmanı = row.Cells[0].Value.ToString();
                 yeniek3.İşEkipmanıSahibi = row.Cells[1].Value.ToString();

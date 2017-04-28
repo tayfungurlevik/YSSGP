@@ -101,6 +101,10 @@ namespace YSSGP
             this.lblAçıklama = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.eK3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eK4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eK5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eK6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -181,7 +185,11 @@ namespace YSSGP
             this.sağlıkVeGüvenlikOrganizasyonuToolStripMenuItem,
             this.işlerinYönetimiToolStripMenuItem1,
             this.risklerinVeKontrolTedbirlerininBelirlenmesiToolStripMenuItem1,
-            this.şantiyeKurallarıToolStripMenuItem2});
+            this.şantiyeKurallarıToolStripMenuItem2,
+            this.eK3ToolStripMenuItem,
+            this.eK4ToolStripMenuItem,
+            this.eK5ToolStripMenuItem,
+            this.eK6ToolStripMenuItem});
             this.yazdırToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("yazdırToolStripMenuItem.Image")));
             this.yazdırToolStripMenuItem.Name = "yazdırToolStripMenuItem";
             this.yazdırToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
@@ -502,6 +510,7 @@ namespace YSSGP
             this.eK6YıllıkEğitimProgramıToolStripMenuItem.Name = "eK6YıllıkEğitimProgramıToolStripMenuItem";
             this.eK6YıllıkEğitimProgramıToolStripMenuItem.Size = new System.Drawing.Size(285, 22);
             this.eK6YıllıkEğitimProgramıToolStripMenuItem.Text = "EK-6 Yıllık Eğitim Programı";
+            this.eK6YıllıkEğitimProgramıToolStripMenuItem.Click += new System.EventHandler(this.eK6YıllıkEğitimProgramıToolStripMenuItem_Click);
             // 
             // raporToolStripMenuItem
             // 
@@ -643,6 +652,34 @@ namespace YSSGP
             this.openFileDialog2.Filter = "JPEG Dosyası (*.jpeg)|*.jpeg|PNG Dosyası (*.png)|*.png";
             this.openFileDialog2.Title = "İSG Organizasyon Şeması Seç";
             // 
+            // eK3ToolStripMenuItem
+            // 
+            this.eK3ToolStripMenuItem.Name = "eK3ToolStripMenuItem";
+            this.eK3ToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
+            this.eK3ToolStripMenuItem.Text = "EK-3";
+            this.eK3ToolStripMenuItem.Click += new System.EventHandler(this.eK3ToolStripMenuItem_Click);
+            // 
+            // eK4ToolStripMenuItem
+            // 
+            this.eK4ToolStripMenuItem.Name = "eK4ToolStripMenuItem";
+            this.eK4ToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
+            this.eK4ToolStripMenuItem.Text = "EK-4";
+            this.eK4ToolStripMenuItem.Click += new System.EventHandler(this.eK4ToolStripMenuItem_Click);
+            // 
+            // eK5ToolStripMenuItem
+            // 
+            this.eK5ToolStripMenuItem.Name = "eK5ToolStripMenuItem";
+            this.eK5ToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
+            this.eK5ToolStripMenuItem.Text = "EK-5";
+            this.eK5ToolStripMenuItem.Click += new System.EventHandler(this.eK5ToolStripMenuItem_Click);
+            // 
+            // eK6ToolStripMenuItem
+            // 
+            this.eK6ToolStripMenuItem.Name = "eK6ToolStripMenuItem";
+            this.eK6ToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
+            this.eK6ToolStripMenuItem.Text = "EK-6";
+            this.eK6ToolStripMenuItem.Click += new System.EventHandler(this.eK6ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,6 +778,10 @@ namespace YSSGP
         private ToolStripMenuItem eK4KişiselKoruyucuDonanımListesiToolStripMenuItem;
         private ToolStripMenuItem eK5SınırlıGirişSağlanacakYerlerListesiToolStripMenuItem;
         private ToolStripMenuItem eK6YıllıkEğitimProgramıToolStripMenuItem;
+        private ToolStripMenuItem eK3ToolStripMenuItem;
+        private ToolStripMenuItem eK4ToolStripMenuItem;
+        private ToolStripMenuItem eK5ToolStripMenuItem;
+        private ToolStripMenuItem eK6ToolStripMenuItem;
     }
 }
 

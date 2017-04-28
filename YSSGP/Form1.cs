@@ -86,6 +86,7 @@ namespace YSSGP
             Proje.ekucmaddeleri = new List<Ek_3>();
             Proje.ekdortmaddeleri = new List<Ek_4>();
             Proje.ekbesmaddeleri = new List<Ek_5>();
+            Proje.ekaltimaddeleri = new List<Ek_6>();
         }
 
         private void kendiNamVeHesabınaÇalışanlaraAitBilgilerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -533,6 +534,53 @@ namespace YSSGP
             Ek4Form f = Ek4Form.FormuGoster(lblAçıklama);
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void eK6YıllıkEğitimProgramıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ek6Form f=Ek6Form.FormuGoster(lblAçıklama);
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void eK3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                RaporHelper.Ek3Yazdir(saveFileDialog2.FileName);
+
+                Process.Start(saveFileDialog2.FileName);
+            }
+        }
+
+        private void eK4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                RaporHelper.Ek4Yazdir(saveFileDialog2.FileName);
+
+                Process.Start(saveFileDialog2.FileName);
+            }
+        }
+
+        private void eK5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                RaporHelper.Ek5Yazdir(saveFileDialog2.FileName);
+
+                Process.Start(saveFileDialog2.FileName);
+            }
+        }
+
+        private void eK6ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                RaporHelper.Ek6Yazdir(saveFileDialog2.FileName);
+
+                Process.Start(saveFileDialog2.FileName);
+            }
         }
     }
 }

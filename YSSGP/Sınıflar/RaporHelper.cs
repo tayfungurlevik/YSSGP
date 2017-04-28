@@ -361,10 +361,15 @@ namespace YSSGP.Sınıflar
                 doc.Add(uzmangorevlist);
 
             }
-            doc.Add(new AreaBreak(iText.Layout.Properties.AreaBreakType.NEXT_PAGE));
-            doc.Add(new Paragraph("3.2 İSG Organizasyon Şeması").SetFont(font).SetFontSize(12).SetBold());
-            Image isgsema = new Image(ImageDataFactory.Create(Proje.isgorganizasyonsemasi));
-            doc.Add(isgsema);
+            if (Proje.isgorganizasyonsemasi!="")
+            {
+                doc.Add(new AreaBreak(iText.Layout.Properties.AreaBreakType.NEXT_PAGE));
+                doc.Add(new Paragraph("3.2 İSG Organizasyon Şeması").SetFont(font).SetFontSize(12).SetBold());
+
+                Image isgsema = new Image(ImageDataFactory.Create(Proje.isgorganizasyonsemasi));
+                doc.Add(isgsema);
+            }
+            
             doc.Close();
 
 
@@ -539,7 +544,134 @@ namespace YSSGP.Sınıflar
             doc.Add(ziyaretciliste);
             doc.Close();
         }
+        internal static void Ek3Yazdir(string filename)
+        {
+            PdfWriter pdfyazici = new PdfWriter(filename);
+            PdfDocument pdf = new PdfDocument(pdfyazici);
+            Document doc = new Document(pdf, PageSize.A4);
+            doc.SetMargins(40, 60, 30, 30);
+            
+            PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
 
+            doc.Add(new Paragraph("EK-3 İŞ EKİPMANLARI LİSTESİ").SetFont(font).SetFontSize(24));
+            Table ek3tablo = new Table(4);
+            ek3tablo.SetFont(font);
+            ek3tablo.SetFontSize(12);
+            ek3tablo.AddCell("İş Ekipmanı (Model/Seri No/Plaka No)");
+            ek3tablo.AddCell("İş Ekipmanının Sahibi");
+            ek3tablo.AddCell("İş Ekipmanını Kuracak/ Kullanacak Kişilerin Yetkinliği");
+            ek3tablo.AddCell("İSG Yönünden Uygunluk Gerekliliği");
+            
+            for (int i = 0; i < Proje.ekucmaddeleri.Count; i++)
+            {
+                ek3tablo.AddCell(Proje.ekucmaddeleri[i].İşEkipmanı);
+                ek3tablo.AddCell(Proje.ekucmaddeleri[i].İşEkipmanıSahibi);
+                ek3tablo.AddCell(Proje.ekucmaddeleri[i].KişilerinYetkinliği);
+                ek3tablo.AddCell(Proje.ekucmaddeleri[i].Gereklilik);
+                
+
+            }
+            doc.Add(ek3tablo);
+            doc.Close();
+
+        }
+        internal static void Ek4Yazdir(string filename)
+        {
+            PdfWriter pdfyazici = new PdfWriter(filename);
+            PdfDocument pdf = new PdfDocument(pdfyazici);
+            Document doc = new Document(pdf, PageSize.A4);
+            doc.SetMargins(40, 60, 30, 30);
+            
+            PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
+
+            doc.Add(new Paragraph("EK-4 KİŞİSEL KORUYUCU DONANIM LİSTESİ").SetFont(font).SetFontSize(24));
+            Table ek4tablo = new Table(5);
+            ek4tablo.SetFont(font);
+            ek4tablo.SetFontSize(12);
+            ek4tablo.AddCell("KKD");
+            ek4tablo.AddCell("Kategori");
+            ek4tablo.AddCell("Bakım/Yenileme Süresi");
+            ek4tablo.AddCell("Mak. Kullanma Süresi");
+            ek4tablo.AddCell("Standardı ve Modeli");
+            for (int i = 0; i < Proje.ekdortmaddeleri.Count; i++)
+            {
+                ek4tablo.AddCell(Proje.ekdortmaddeleri[i].KKD);
+                ek4tablo.AddCell(Proje.ekdortmaddeleri[i].Kategori);
+                ek4tablo.AddCell(Proje.ekdortmaddeleri[i].BakımSüresi);
+                ek4tablo.AddCell(Proje.ekdortmaddeleri[i].MakSüre);
+                ek4tablo.AddCell(Proje.ekdortmaddeleri[i].Standart);
+
+            }
+            doc.Add(ek4tablo);
+            doc.Close();
+
+        }
+        internal static void Ek5Yazdir(string filename)
+        {
+            PdfWriter pdfyazici = new PdfWriter(filename);
+            PdfDocument pdf = new PdfDocument(pdfyazici);
+            Document doc = new Document(pdf, PageSize.A4);
+            doc.SetMargins(40, 60, 30, 30);
+            
+            PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
+
+            doc.Add(new Paragraph("EK-5 SINIRLI GİRİŞ SAĞLANACAK YERLERİN LİSTESİ").SetFont(font).SetFontSize(24));
+            Table ek5tablo = new Table(4);
+            ek5tablo.SetFont(font);
+            ek5tablo.SetFontSize(12);
+            ek5tablo.AddCell("Yerin Tarifi");
+            ek5tablo.AddCell("Sınırlı Giriş Sebebi");
+            ek5tablo.AddCell("Girişe İzinli Kişi / Ekipler");
+            ek5tablo.AddCell("Giriş Prosedürü");
+            
+            for (int i = 0; i < Proje.ekbesmaddeleri.Count; i++)
+            {
+                ek5tablo.AddCell(Proje.ekbesmaddeleri[i].YerinTarifi);
+                ek5tablo.AddCell(Proje.ekbesmaddeleri[i].SınırlıGeçişSebebi);
+                ek5tablo.AddCell(Proje.ekbesmaddeleri[i].GirişeİzinliKişi);
+                ek5tablo.AddCell(Proje.ekbesmaddeleri[i].Prosedür);
+              
+
+            }
+            doc.Add(ek5tablo);
+            doc.Close();
+
+        }
+        internal static void Ek6Yazdir(string filename)
+        {
+            PdfWriter pdfyazici = new PdfWriter(filename);
+            PdfDocument pdf = new PdfDocument(pdfyazici);
+            Document doc = new Document(pdf, PageSize.A4);
+            doc.SetMargins(40, 60, 30, 30);
+            
+            PdfFont font = PdfFontFactory.CreateFont("C:\\Windows\\Fonts\\times.ttf", "windows-1254", true);
+
+            doc.Add(new Paragraph("EK-6 YILLIK EĞİTİM PROGRAMI").SetFont(font).SetFontSize(24));
+            Table ek6tablo = new Table(6);
+            ek6tablo.SetFont(font);
+            ek6tablo.SetFontSize(12);
+            ek6tablo.AddCell("Eğitime Katılacaklar");
+            ek6tablo.AddCell("Eğitimin Konusu");
+            ek6tablo.AddCell("Hedef ve Amaç");
+            ek6tablo.AddCell("Eğitimin Süresi");
+            ek6tablo.AddCell("Eğitim Başlangıç Tarihi");
+            ek6tablo.AddCell("Eğitim Bitiş Tarihi");
+
+            for (int i = 0; i < Proje.ekaltimaddeleri.Count; i++)
+            {
+                ek6tablo.AddCell(Proje.ekaltimaddeleri[i].EğitimeKatılacaklar);
+                ek6tablo.AddCell(Proje.ekaltimaddeleri[i].EğitiminKonusu);
+                ek6tablo.AddCell(Proje.ekaltimaddeleri[i].HedefveAmaç);
+                ek6tablo.AddCell(Proje.ekaltimaddeleri[i].EğitiminSüresi);
+                ek6tablo.AddCell(Proje.ekaltimaddeleri[i].eğitimBaslangic.ToShortDateString());
+                ek6tablo.AddCell(Proje.ekaltimaddeleri[i].eğitimBitis.ToShortDateString());
+
+
+            }
+            doc.Add(ek6tablo);
+            doc.Close();
+
+        }
         internal static void Bolum5Yazdir(string fileName)
         {
 

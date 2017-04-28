@@ -180,6 +180,7 @@
     <Compile Include="Ek6Form.Designer.cs">
       <DependentUpon>Ek6Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sınıflar\Ek-6.cs" />
     <Compile Include="Sınıflar\Ek-5.cs" />
     <Compile Include="Sınıflar\Ek_4.cs" />
     <Compile Include="ExampleFull.cs">
